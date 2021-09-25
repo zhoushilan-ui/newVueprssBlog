@@ -10,14 +10,14 @@ npm run build
 cd docs/.vuepress/dist
 
 # 如果是发布到自定义域名
-# echo 'www.yourwebsite.com' > CNAME
+echo 'www.zhoushilan-ui.com' > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
 # 如果你想要部署到 https://zhoushilan-ui.github.io
-git push -f git@github.com:zhoushilan-ui/newVueprssBlog.git master
+git push -f git@github.com:zhoushilan-ui/newVueprssBlog.github.io.git master
 
 # 如果发布到 https://zhoushilan-ui.github.io/<REPO>  REPO=github上的项目
 # git push -f git@github.com:zhoushilan-ui/<REPO>.git master:gh-pages
