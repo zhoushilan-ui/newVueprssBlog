@@ -17,12 +17,7 @@ module.exports = {
       { text: "微博", link: "https://baidu.com" },
     ],
     sidebar: {
-      "/accumulate/": [
-        {
-          title: "前端积累",
-          children: ["/accumulate/1.html"],
-        },
-      ],
+      "/accumulate/": ["/accumulate/1.html", "/accumulate/2.html"],
     },
     sidebar: "auto", // 侧边栏配置
     sidebarDepth: 2, // 侧边栏显示2级
