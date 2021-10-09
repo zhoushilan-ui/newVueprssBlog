@@ -17,7 +17,10 @@ module.exports = {
       { text: "微博", link: "https://baidu.com" },
     ],
     sidebar: {
-      "/accumulate/": ["/accumulate/1.html", "/accumulate/2.html"],
+      "/accumulate/": [
+        "/accumulate/Webversion.html",
+        "/accumulate/signature.html",
+      ],
     },
     sidebar: "auto", // 侧边栏配置
     sidebarDepth: 2, // 侧边栏显示2级
