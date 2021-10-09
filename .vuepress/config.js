@@ -18,10 +18,8 @@ module.exports = {
     ],
     sidebar: {
       "/accumulate/": [
-        {
-          title: "前端积累",
-          children: ["/accumulate/1.html"],
-        },
+        "/accumulate/Webversion.html",
+        "/accumulate/signature.html",
       ],
     },
     sidebar: "auto", // 侧边栏配置
