@@ -20,6 +20,8 @@ module.exports = {
       "/accumulate/": [
         "/accumulate/Webversion.html",
         "/accumulate/signature.html",
+        "/accumulate/PIxijs.html",
+        "/accumulate/mojs.html",
       ],
     },
     sidebar: "auto", // 侧边栏配置
