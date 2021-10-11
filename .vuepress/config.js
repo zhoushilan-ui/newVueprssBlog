@@ -5,7 +5,7 @@ module.exports = {
     // 注入到当前页面的 HTML <head> 中的标签
     ["link", { rel: "icon", href: "/logo.jpg" }], // 增加一个自定义的 favicon(网页标签的图标)
   ],
-  base: "/newvueprssblog/", // 这是部署到github相关的配置
+  base: "/newVueprssBlog/", // 这是部署到github相关的配置
   markdown: {
     lineNumbers: false, // 代码块显示行号
   },
@@ -20,6 +20,8 @@ module.exports = {
       "/accumulate/": [
         "/accumulate/Webversion.html",
         "/accumulate/signature.html",
+        "/accumulate/PIxijs.html",
+        "/accumulate/mojs.html",
       ],
     },
     sidebar: "auto", // 侧边栏配置
