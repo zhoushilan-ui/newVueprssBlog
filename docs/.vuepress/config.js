@@ -22,6 +22,8 @@ module.exports = {
         "/accumulate/signature.html",
         "/accumulate/PIxijs.html",
         "/accumulate/mojs.html",
+        "/accumulate/textillatejs.html",
+        "/accumulate/es6.html",
       ],
     },
     sidebar: "auto", // 侧边栏配置

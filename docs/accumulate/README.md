@@ -4,4 +4,7 @@
 #### [Pixijs](/accumulate/PIxijs.html)
 #### [SVG Mesh 3d](/accumulate/svg-mesh-3d.md)
 #### [Mojs](/accumulate/mojs.md)
+#### [textillate.js(文本/文字动画)](/accumulate/textillatejs.html)
+#### [ES6的常用用法](/accumulate/es6.html)
 #### [碎知识点](/accumulate/Brokenknowledge.html)
+
