@@ -112,7 +112,7 @@
    在默认的情况下，如果创建的形状没有指定的父元素的情况下，那么整个dom元素都将作为这个形状的父元素。有指定的元素的`className`会被赋给属性`parent`
    Mojs内置了八个不同的形状，因此您可以通过为shape属性设置一个值来直接创建它们。（Shape的属性： 'circle' | 'rect' | 'polygon' | 'line' | 'cross' | 'equal' | 'curve' | 'zigzag' | '自定义名称'）
 
-## Shape的属性：
+### Shape的属性：
  ```js
 const shape = new mojs.Shape({
 
@@ -733,6 +733,726 @@ const shape = new mojs.Shape({
 效果：<br>
 ![](../.vuepress/public/images/exmaple2.gif)
 
+### Tweenable接口
+
+###  Tune
+   这个tune是作用在动画之前。例如，用户在点击一个div后，才出现mojs创建的形状和动画。
+   你可以创建一个`tune`开始动画之前的任何属性。这个曲调当您想为动画添加一些交互性或播放有关用户输入的形状时，方法非常方便-该方法正是为此目的而设计的（单击某个位置查看）：
+   
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    #container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+      margin-right: 10px;
+    }
+    .no-pointer {
+      cursor: pointer;
+    }
+    #tune1 {
+      background-color: antiquewhite;
+    }
+    #tune2 {
+      background-color: aqua;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="tune1" class="item"></div>
+      <div id="tune2" class="item"></div>
+    </div>
+
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      const parent = document.getElementById("tune1");
+      let data = {
+        parent: parent,
+        fill: "none",
+        radius: 25,
+        strokeWidth: { 50: 0 },
+        scale: { 0: 1 },
+        angle: { "rand(-35, -70)": 0 },
+        duration: 500,
+        left: 0,
+        top: 0,
+        easing: "cubic.out",
+        className: "no-pointer",
+      };
+      let circle = new mojs.Shape({
+        ...data,
+        stroke: "cyan",
+      });
+      let circle1 = new mojs.Shape({
+        ...data,
+        radius: 10,
+        stroke: "#CF2F1A",
+      });
+
+      //动画前的点击事件
+      parent.addEventListener("click", function (e) {
+        // console.log(e);
+        circle.tune({ x: e.offsetX, y: e.offsetY }).replay();
+        circle1.tune({ x: e.offsetX, y: e.offsetY }).replay();
+      });
+
+      const parent1 = document.getElementById("tune2");
+      let data1 = {
+        parent: parent1,
+        fill: "pink",
+        radius: 25,
+        scale: { 0: 1 },
+        duration: 500,
+        easing: "cubic.out",
+        strokeWidth: { 50: 0 },
+        left: "450",
+        top: "150",
+      };
+      let circle2 = new mojs.Shape({
+        parent: parent1,
+        ...data1,
+        stroke: "#CF2F1A",
+        x: { 100: 80 },
+        y: { [-100]: 0 },
+      }).then({
+        y: 100,
+      });
+      let circle3 = new mojs.Shape({
+        parent: parent1,
+        ...data1,
+        stroke: "#CFC31A",
+      });
+
+      parent1.addEventListener("click", function (e) {
+        circle2.tune({ y: -100 }).replay();
+        circle3.tune({ y: { [-100]: 0 } }).replay();
+      });
+    </script>
+  </body>
+</html>
+
+```
+效果：<br>
+ ![](../.vuepress/public/images/example3.gif)
+
+### Generate
+ 该方法旨在重新生成形状在初始化时具有的随机性。该方法是用来生成y一个形状的随机的大小。
+
+```js
+ <html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+    }
+    #generate1 {
+      background-color: aqua;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div id="generate1" class="item"></div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      const option = {
+        shape: "circle",
+        fill: "none",
+        strokeWidth: { 50: 0 },
+        duration: 1000,
+        left: 20,
+        width: "300",
+        height: "300",
+        top: 20,
+        easing: "cubic.out",
+        radius: 25,
+      };
+      const mainCircle = new mojs.Shape({
+        // parent: "#generate1",
+        ...option,
+        stroke: "pink",
+      });
+
+      const smallCircle = [];
+      const colors = ["#CD1400", "#CDC300", "#00CD5C", "#009BCD"];
+      for (let i = 0; i < 4; i++) {
+        smallCircle.push(
+          new mojs.Shape({
+            parent: mainCircle.el,
+            ...option,
+            stroke: colors[i],
+            radius: { 0: 30 },
+            strokeWidth: { 40: 0 },
+            x: "rand(-50,50)",
+            y: "rand(-50,50)",
+            delay: "rand(0,350)",
+            left: "50%",
+            top: "50%",
+          })
+        );
+      }
+      document.getElementById("generate1").addEventListener("click", (e) => {
+        mainCircle.tune({ x: e.pageX, y: e.pageY }).replay();
+        for (let i = 0; i < smallCircle.length; i++) {
+          smallCircle[i].generate().replay();
+        }
+      });
+      console.log(mainCircle.el);
+    </script>
+  </body>
+</html>
+
+```
+效果：<br>
+![](../.vuepress/public/images/example4.gif)
+
+### Custom Shapes
+   自定义样式。在mojs中，有默认样式circle,rect,polygon,line,cross,equal,curve、zigzag。可以自定义样式。
+   您可能已经注意到mojs支持许多内置的形状。也就是说，他们是circle , 矩形 ,polygon ,线 ,cross ,平等的 ,curve和之字形的. 您可以通过为mojs提供一个符合您需要的自定义形状来扩展这组形状。为此：
+  ** 在一个100x100在任何向量编辑器中的artboard（viewBox），并将形状另存为svg .
+
+  ** 扩展创建mojs.CustomShape班级。
+
+  ** 从svg文件中复制形状标记。。。
+
+
+  ```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    .contaier {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <div class="contaier">
+      <div id="Custom-Shapes1" class="item"></div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      //创建一个心的形状的类，这个类继承mojs.CustomShape
+      class Heart extends mojs.CustomShape {
+        getShape() {
+          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
+        }
+        getLength() {
+          return 200;
+        }
+      }
+      //把创建的类添加在mojs里面
+      mojs.addShape("heart", Heart); // passing name and Bubble class(传递名称和泡泡类)
+
+      /* USE CUSTOM SHAPE (使用自定义形状)*/
+      // now it is available on mojs.Shape constructor as usual(现在它在mojs上可用。像往常一样构造形状)
+      const heart = new mojs.Shape({
+        shape: "heart", // 心的样式被使用
+        fill: "none",
+        stroke: "red",
+        scale: { 0: 1 },
+        strokeWidth: { 50: 0 },
+        y: -20,
+        width: 200,
+        height: 200,
+        duration: 1000,
+      }).play();
+
+      //创建一个新的形状的类，这个类继承mojs.CustomShape
+      class Hearts extends mojs.CustomShape {
+        getShape() {
+          return `
+    <path d="M475.19,274.75c-1.43-2.39-2.88-4.73-4.34-7C429.26,203,356.37,165.44,279.42,165c-165-.94-220.74,109.62-220.74,109.62l233.79,73.65S469.07,295.09,469.05,294,475.19,274.75,475.19,274.75Z" class="cls-1"></path>
+    <path d="M292.47,349.14l-.25-.08L57.5,275.12l.43-.87c.15-.28,14.41-28.12,48.71-55.44,31.38-25,86.4-54.65,170.72-54.65h2.06c79.11.45,150.93,39,192.13,103.13q2.19,3.42,4.35,7l.19.32L476,275c-2.3,6.81-6,18-6.1,19.05,0,.89,0,1.24-88.86,28.28-44.15,13.42-88.3,26.72-88.3,26.72Zm-232.59-75,232.6,73.27c58.65-17.66,169.06-51.11,175.83-53.91.63-2.72,4.22-13.46,6-18.64q-2-3.41-4.13-6.65C429.26,204.55,358,166.28,279.41,165.83h-2.05c-83.81,0-138.45,29.43-169.62,54.23C77.08,244.45,62.56,269.24,59.88,274.13Z" class="cls-2"></path>
+    <polygon points="63.82 122.03 173.17 70.54 304.38 307.91 194.09 358.44 63.82 122.03" class="cls-3"></polygon>
+    <path d="M193.74,359.52l-.37-.68L62.66,121.66l.81-.38L173.52,69.45l132,238.84ZM65,122.41l129.48,235,108.77-49.84L172.82,71.62Z" class="cls-2"></path>
+    <path d="M393.89,296C513.46,245.53,460,116.1,460,116.1L361.84,209l-81.16,53.18,12.13,32.65,15.86,32.65,19.59,3.73Z" class="cls-4"></path>
+    <path d="M328.39,332.06l-20.29-3.87-16-33-12.39-33.34,81.72-53.54,98.92-93.62.46,1.12c.14.32,13.42,33,11.84,71.37-1.45,35.5-16.23,83.33-78.36,109.57Zm-19.16-5.34,18.9,3.6,65.43-35.1c61.37-25.9,76-73.1,77.39-108.13,1.4-34-9-63.49-11.27-69.54l-97.27,92-80.72,52.9,11.9,32Z" class="cls-2"></path>
+    <path d="M124.16,149.86l-5.82-11L170,111.49l5.83,11Z" class="cls-2"></path>
+    <path d="M102.07,132.57l11.2-5.45,15.65,30.19-11.2,5.45Z" class="cls-2"></path>
+    <path d="M154.31,108.37l11-5.89,10.35,19.73-10.94,6Z" class="cls-2"></path>
+    <path d="M206.9,191.47q7.71,14.57,3.16,24.71-3.88,8.61-15.66,14.84-14,7.42-24,4.08-8.91-3.12-15-14.59-8.13-15.34-3.12-26.33,3.81-8.18,15.28-14.24,13.24-7,22.83-4.2T206.9,191.47Zm-8.73,4.31a15,15,0,0,0-4.86-5.52,11.66,11.66,0,0,0-6.49-2.06,18.75,18.75,0,0,0-5.81.94,35.58,35.58,0,0,0-6.58,2.64,41,41,0,0,0-6.61,4.39,23.57,23.57,0,0,0-4.52,4.58q-4.06,6,.49,14.62,2.51,4.73,5.79,6.26a14.17,14.17,0,0,0,10.29.51,44.74,44.74,0,0,0,8.59-3.46,31.66,31.66,0,0,0,6.91-4.85,16.54,16.54,0,0,0,4.08-5.33,11.82,11.82,0,0,0,.76-6A19.44,19.44,0,0,0,198.17,195.78Z" class="cls-2"></path>
+    <path d="M253.92,281.88q7.71,14.56,3.16,24.72-3.88,8.61-15.66,14.83-14,7.43-24,4.09-8.91-3.12-15-14.6-8.13-15.35-3.12-26.32,3.81-8.18,15.28-14.25,13.26-7,22.83-4.19T253.92,281.88Zm-8.72,4.32a15.1,15.1,0,0,0-4.86-5.52,11.64,11.64,0,0,0-6.51-2.06,18.39,18.39,0,0,0-5.8.93,35.88,35.88,0,0,0-6.58,2.65,40.34,40.34,0,0,0-6.61,4.39,23.56,23.56,0,0,0-4.52,4.57q-4.06,6,.49,14.62c1.67,3.16,3.6,5.24,5.8,6.27a14.12,14.12,0,0,0,10.29.5,44,44,0,0,0,8.58-3.45,32.68,32.68,0,0,0,6.92-4.85,16.74,16.74,0,0,0,4.07-5.33,11.75,11.75,0,0,0,.76-6A19.5,19.5,0,0,0,245.2,286.2Z" class="cls-2"></path>
+    <path d="M286.6,274.69C412.54,266.23,451,161.35,461.09,126.78a13.65,13.65,0,0,0-7.31-16.25c-58.72-26.71-138.32,2.24-138.32,2.24l-58.1,90.62,4.67,28Z" class="cls-5"></path>
+    <path d="M286.14,275.55l-.26-.45L261.2,231.51l-4.71-28.3.17-.27,58.25-90.85.26-.1a264.64,264.64,0,0,1,47.31-11.18c25-3.57,61.12-4.92,91.64,9A14.5,14.5,0,0,1,461.89,127c-6.53,22.27-19.46,54.92-44,84-33,39.13-77.12,60.82-131.25,64.45Zm-23.32-44.46,24.25,42.73c53.42-3.71,97-25.18,129.57-63.83,24.34-28.9,37.17-61.32,43.65-83.44a12.81,12.81,0,0,0-6.85-15.26c-30.15-13.71-66-12.37-90.73-8.84a264.82,264.82,0,0,0-46.71,11l-57.77,90.1Z" class="cls-2"></path>
+    <path d="M267.25,237.63c87.54-18.1,87.54-75,83.45-98.8a22.08,22.08,0,0,0-11.33-15.63C250.19,75.1,220.1,155.43,220.1,155.43Z" class="cls-6"></path>
+    <path d="M266.82,238.56l-.29-.52-47.35-82.53.14-.37c.12-.32,12.38-32.24,43.37-43.86,22-8.27,48-4.5,77.07,11.19a23.06,23.06,0,0,1,11.76,16.21c4.12,23.92,4.15,81.52-84.11,99.76ZM221,155.37l46.65,81.32c86.25-18.08,86.24-74.34,82.22-97.73a21.4,21.4,0,0,0-10.92-15c-28.64-15.45-54.11-19.19-75.68-11.1C234.77,123.51,222.45,151.85,221,155.37Z" class="cls-2"></path>
+    <path d="M446.2,447.83l30.08-169.51a4.8,4.8,0,0,0-6.52-5.29C284,345.59,104.19,287.34,65,272.86a4.8,4.8,0,0,0-6.37,5.37l30.1,169.6Z" class="cls-7"></path>
+    <path d="M446.9,448.65H88l-.12-.68L57.81,278.38A5.64,5.64,0,0,1,59.75,273a5.54,5.54,0,0,1,5.54-.95c34.71,12.83,217.38,73.13,404.17.18a5.6,5.6,0,0,1,5.67.88,5.54,5.54,0,0,1,2,5.32ZM89.42,447H445.5l30-168.82a3.87,3.87,0,0,0-1.38-3.74,4,4,0,0,0-4-.63c-79,30.84-165.67,41.81-257.73,32.61-72.9-7.28-127.52-25.35-147.62-32.77a3.89,3.89,0,0,0-3.89.66,4,4,0,0,0-1.37,3.79Z" class="cls-2"></path>
+    <path d="M163.41,409.67a14.44,14.44,0,0,0,21.39-9.13c7.08-29.37,23.63-60.35,23.63-60.35s98.83-33.56,117.93,4.76c8.82,17.69,15,42.46,19,64a14.46,14.46,0,0,0,21.11,9.95C431,384.17,467.81,324,467.81,324l.53-1,7.94-44.71a4.8,4.8,0,0,0-6.52-5.28C284,345.59,104.19,287.34,65,272.86a4.8,4.8,0,0,0-6.37,5.37l9.21,51.9C101.3,366.08,133.24,391.94,163.41,409.67Z" class="cls-7"></path>
+    <path d="M446.2,447.83,468.34,323l-.53,1S431,384.17,366.5,418.89a14.46,14.46,0,0,1-21.11-9.95c-4.06-21.53-10.21-46.3-19-64-19.1-38.32-117.93-4.76-117.93-4.76s-16.55,31-23.63,60.35a14.44,14.44,0,0,1-21.39,9.13c-30.17-17.73-62.11-43.59-95.57-79.54l20.89,117.7Z" class="cls-8"></path>
+    <path d="M447.34,449.2H87.58L57.28,278.48a6.17,6.17,0,0,1,8.19-6.9c34.7,12.81,217.22,73,403.79.17a6.18,6.18,0,0,1,6.22,1,6.08,6.08,0,0,1,2.15,5.83ZM89.87,446.46H445.05l29.88-168.39a3.33,3.33,0,0,0-1.19-3.22,3.44,3.44,0,0,0-3.49-.54C282.76,347.54,99.38,287,64.52,274.15a3.35,3.35,0,0,0-3.36.57A3.44,3.44,0,0,0,60,278Z" class="cls-2"></path>
+    <path d="M249.28,341.57a516.44,516.44,0,0,1-76.73-5.51c-66.38-10-102.47-30.15-102.83-30.35a.83.83,0,0,1,.82-1.45c.36.2,36.25,20.24,102.36,30.17,61,9.16,161,11.34,290.74-30.34a.84.84,0,0,1,1.05.54.83.83,0,0,1-.54,1C378.83,333.08,306.34,341.57,249.28,341.57Z" class="cls-2"></path>
+    <ellipse ry="58.24" rx="59.15" cy="336.98" cx="264.16" class="cls-9"></ellipse>
+    <path d="M264.16,399.12c-34.8,0-63.11-27.87-63.11-62.14s28.31-62.14,63.11-62.14,63.12,27.88,63.12,62.14S299,399.12,264.16,399.12Zm0-117c-30.73,0-55.73,24.62-55.73,54.87s25,54.87,55.73,54.87,55.73-24.61,55.73-54.87S294.89,282.11,264.16,282.11Z" class="cls-10"></path>
+    <path d="M296.26,351.08c-3.75-1.23-8.77-3.12-14.36-5.1a73.36,73.36,0,0,0,7.8-19.36H271.27V320.1h22.58v-3.64H271.27V305.6h-9.22a1.55,1.55,0,0,0-1.62,1.56v9.3H237.59v3.64h22.84v6.52H241.57v3.64h36.58a62.92,62.92,0,0,1-5.27,12.64c-11.86-3.85-24.53-7-32.48-5-5.09,1.23-8.37,3.42-10.3,5.72-8.83,10.56-2.5,26.59,16.17,26.59,11,0,21.66-6,29.9-16,12.28,5.8,36.61,15.75,36.61,15.75l6.94-12.08s-10-2.35-23.46-6.77M244.52,364c-14.55,0-18.85-11.25-11.66-17.41,2.4-2.08,6.79-3.09,9.12-3.32,8.65-.84,16.65,2.4,26.09,6.92C261.43,358.72,253,364,244.52,364" class="cls-10"></path>
+`;
+        }
+        getLength() {
+          return 2000;
+        }
+      }
+      //把创建的类添加在mojs里面
+      mojs.addShape("hearts", Hearts); // passing name and Bubble class(传递名称和泡泡类)
+      new mojs.Shape({
+        parent: "#Custom-Shapes1",
+        shape: "hearts", // 心的样式被使用
+        fill: "none",
+        stroke: "red",
+        width: 1000,
+        height: 1000,
+        scale: { 0: 1 },
+        strokeWidth: { 10: 1 },
+        y: -20,
+        duration: 1000,
+        isYoyo: true, //动画在达到最终状态后向后播放,默认为false
+        isShowStart: true,
+      }).play();
+    </script>
+  </body>
+</html>
+
+```
+
+效果：<br>
+![](../.vuepress/public/images/exmpla5.gif)
+
+### 点击mojs创建的形状,修改形状
+
+```js
+<html>
+  <head>
+    <title></title>
+    <style>
+      #container {
+        height: 600px;
+      }
+      #containers {
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="containers"></div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      var count = 1;
+      let data = new mojs.Shape({
+        shape: "rect",
+        parent: "#containers",
+        rotate: { [-180]: 260 },
+        isShowStart: true,
+        fill: "red",
+        stroke: "red",
+        repeat: 4,
+        className: "svg-rect",
+        onComplete() {
+          this.el.addEventListener(
+            "click",
+            function (e) {
+              let dataSvg = `<circle fill-opacity="1" stroke-linecap="" stroke-dashoffset="" fill="pink" stroke-dasharray="" stroke-opacity="1" stroke-width="2" r="100" stroke="pink" width="200" height="200" x="1" y="1" rx="0" ry="0"></circle>`;
+              let dataSvgout = `<svg style=\"display: block; width: 100%; height: 100%; left: 0px; top: 0px;\">${dataSvg}</svg>`;
+
+              let dataSvgs = `<rect fill-opacity=\"1\" stroke-linecap=\"\" stroke-dashoffset=\"\" fill=\"pink\" stroke-dasharray=\"\" stroke-opacity=\"1\" stroke-width=\"2\" r=\"100\" stroke=\"pink\" width=\"200\" height=\"200\" x=\"1\" y=\"1\" rx=\"0\" ry=\"0\"></rect>`;
+              let dataSvgsout = `<svg style=\"display: block; width: 100%; height: 100%; left: 0px; top: 0px;\">${dataSvgs}</svg>`;
+              if (count % 2 == 0) {
+                e.path[1].outerHTML = dataSvgout;
+                e.path[1].innerHTML = dataSvg;
+              } else {
+                e.path[1].outerHTML = dataSvgsout;
+                e.path[1].innerHTML = dataSvgs;
+              }
+              count++;
+              //   //修改样式
+              new mojs.Shape({
+                fill: "none",
+                stroke: "pink",
+                shape: "rect",
+                parent: "#container",
+                width: 100,
+                height: 100,
+                scale: { 0: 5 },
+                duration: 1000,
+                deplay: 500,
+              }).play();
+            },
+            false
+          );
+        },
+      }).play();
+
+      //   $(".svg-rect").click(function () {
+      //     console.log(333333333);
+      //   });
+
+      var molinkEl = document.getElementById("container"),
+        moTimeline = new mojs.Timeline(),
+        moburst1 = new mojs.Burst({
+          parent: molinkEl,
+          duration: 1300,
+          shape: "circle",
+          fill: [
+            "#988ADE",
+            "#DE8AA0",
+            "#8AAEDE",
+            "#8ADEAD",
+            "#DEC58A",
+            "#8AD1DE",
+          ],
+          x: "0%",
+          y: "-50%",
+          radius: { 0: 60 },
+          count: 6,
+          isRunLess: true,
+          easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
+        }),
+        moburst2 = new mojs.Burst({
+          parent: molinkEl,
+          duration: 1600,
+          delay: 100,
+          shape: "circle",
+          fill: [
+            "#988ADE",
+            "#DE8AA0",
+            "#8AAEDE",
+            "#8ADEAD",
+            "#DEC58A",
+            "#8AD1DE",
+          ],
+          x: "-400%",
+          y: "-420%",
+          radius: { 0: 120 },
+          count: 14,
+          isRunLess: true,
+          easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
+        }),
+        moburst3 = new mojs.Burst({
+          parent: molinkEl,
+          duration: 1500,
+          delay: 200,
+          shape: "circle",
+          fill: [
+            "#988ADE",
+            "#DE8AA0",
+            "#8AAEDE",
+            "#8ADEAD",
+            "#DEC58A",
+            "#8AD1DE",
+          ],
+          x: "130%",
+          y: "-70%",
+          radius: { 0: 90 },
+          count: 8,
+          isRunLess: true,
+          easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
+        }),
+        moburst4 = new mojs.Burst({
+          parent: molinkEl,
+          duration: 2000,
+          delay: 300,
+          shape: "circle",
+          fill: [
+            "#988ADE",
+            "#DE8AA0",
+            "#8AAEDE",
+            "#8ADEAD",
+            "#DEC58A",
+            "#8AD1DE",
+          ],
+          x: "-20%",
+          y: "-150%",
+          radius: { 0: 60 },
+          count: 14,
+          isRunLess: true,
+          easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
+        }),
+        moburst5 = new mojs.Burst({
+          parent: molinkEl,
+          duration: 1400,
+          delay: 400,
+          shape: "circle",
+          fill: [
+            "#988ADE",
+            "#DE8AA0",
+            "#8AAEDE",
+            "#8ADEAD",
+            "#DEC58A",
+            "#8AD1DE",
+          ],
+          x: "30%",
+          y: "-100%",
+          radius: { 0: 60 },
+          count: 12,
+          isRunLess: true,
+          easing: mojs.easing.bezier(0.1, 1, 0.3, 1),
+        });
+
+      moTimeline.add(moburst1, moburst2, moburst3, moburst4, moburst5);
+      molinkEl.addEventListener("click", function () {
+        moTimeline.play();
+      });
+      //   moburst1.addEventListener("click", function () {});
+    </script>
+  </body>
+</html>
+
+ ```
+
+ 效果：<br>
+![](../.vuepress/public/images/example6.gif)
+
+###  ShapeSwirl
+   翻译为形状线，`ShapeSwirl`模块基本上是形状加上更多的功能。ShapeSwirl会自动计算形状的正弦x/y路径，使其易于通过正弦轨迹发送形状。
+
+   `请注意`:ShapeSwirl的默认值为{ 1 : 0 }对于规模所以它会逐渐消失。
+   为了触发动画，我们在容器中添加了一个单击事件侦听器，然后运行shapeswirl.replay() .
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+    }
+    #shapeswirl1 {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="shapeswirl1" class="item"></div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      //创建形状
+      class Start extends mojs.CustomShape {
+        getShape() {
+          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
+        }
+        getLength() {
+          return 300;
+        }
+      }
+
+      mojs.addShape("start", Start);
+      const shapeswirl = new mojs.ShapeSwirl({
+        parent: "#shapeswirl1",
+        shape: "start",
+        fill: "#F64040",
+        y: { 0: -150 },
+        duration: 1000,
+        width: 100,
+        height: 100,
+        top: "15%",
+        left: "10%",
+      });
+
+      document
+        .getElementById("shapeswirl1")
+        .addEventListener("click", function () {
+          shapeswirl.replay();
+        });
+    </script>
+  </body>
+</html>
+
+```
+ 效果：<br>
+![](../.vuepress/public/images/example7.gif)
+
+   为了让你控制这种行为，ShapeSwirl接受更多6属性，因此可以定义路径和其他支持参数的频率或大小：
+
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+    }
+    #shapeswirl1 {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="shapeswirl1" class="item"></div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      //创建形状
+      class Start extends mojs.CustomShape {
+        getShape() {
+          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
+        }
+        getLength() {
+          return 300;
+        }
+      }
+
+      mojs.addShape("start", Start);
+      const shapeswirl = new mojs.ShapeSwirl({
+        parent: "#shapeswirl1",
+        shape: "start",
+        fill: "#F64040",
+        width: 100,
+        height: 100,
+        top: "15%",
+        left: "10%",
+        y: { 0: -150 },
+        // other props:
+        isSwirl: true, // sets if the shape should follow sinusoidal path, true by default
+        swirlSize: 10, // defines amplitude of the sine
+        swirlFrequency: 3, // defines frequency of the sine
+        pathScale: "rand( .1, 1 )", // defines how much the total path length should be scaled
+        direction: 1, // direction of the sine could be 1 or -1
+        degreeShift: 45, // rotatation shift for the sinusoidal path
+      });
+
+      document
+        .getElementById("shapeswirl1")
+        .addEventListener("click", function () {
+          shapeswirl.replay();
+        });
+    </script>
+  </body>
+</html>
+```
+ 效果：<br>
+![](../.vuepress/public/images/example8.gif)
+
+
+ ### 1. isSwirl
+这个`isSwirl`财产(是的默认情况下）定义形状是否应遵循正弦路径（如果设置为）false它的行为和简单的一模一样形状 
+```js
+
+```
+ ### 2. swirlSize
+这个`swirlSize`财产( ten默认情况下）定义正弦的偏差或振幅。下面是一个例子`swirlSize: 35` :
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000,
+  direction:       -1,
+});
+```
+ ### 3. 涡流频率
+这个`swirlFrequency`财产( three默认情况下）定义正弦的频率，下面是一个swirlFrequency: 10 :
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlFrequency: 10,
+  duration:       1000,
+});
+
+```
+ ###  4方向
+这个`direction`财产( one默认情况下）定义正弦振幅的方向-它的值为1或 -1. 以下是-1. 注意它是如何从左边开始而不是从右边开始的：
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  direction:      -1,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000
+});
+```
+### 5 路径标度
+这个pathScale财产( one默认情况下）定义正弦路径的缩放大小。下面是一个pathScale: .5-将正弦放大一半（原始半径）：
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+```
+pathScale缩放漩涡的实际路径，例如，如果要为十属性，则路径比例将影响y和十-形状在移动时形成的实际路径
+```js
+
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  x:              { 0: -100 },
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+
+```
+
+
+### 6 键盘标签
+这个degreeShift财产( zero默认情况下）定义漩涡的旋转。当shapeSwirl用于其他模块（如爆裂)。现在它的作用就像正弦路径的旋转一样。下面是一个例子degreeShift: 90 :
+
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  degreeShift:    90,
+  duration:       1000,
+});
+```
+ 效果：<br>
+![](../.vuepress/public/images/example9
+
+.gif)
 
 
 
@@ -747,6 +1467,9 @@ const shape = new mojs.Shape({
 .replay() // 重播动画，相当于stop + play
 
 
+ ## 案例：
+
+ 1.
 
 
 
