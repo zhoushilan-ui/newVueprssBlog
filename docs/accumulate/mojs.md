@@ -343,7 +343,7 @@ const shape = new mojs.Shape({
  ```
 
 
- ###  案例2
+ ####  Shape案例1
 
 ```js 
 <html>
@@ -479,7 +479,7 @@ const shape = new mojs.Shape({
 效果：<br>
 ![](../.vuepress/public/images/img.png)
 
- ###  案例3
+####  Shape案例2
 
  ```js
 <html>
@@ -1045,6 +1045,228 @@ const shape = new mojs.Shape({
 效果：<br>
 ![](../.vuepress/public/images/exmpla5.gif)
 
+
+###  ShapeSwirl
+   翻译为形状线，`ShapeSwirl`模块基本上是形状加上更多的功能。ShapeSwirl会自动计算形状的正弦x/y路径，使其易于通过正弦轨迹发送形状。
+
+   `请注意`:ShapeSwirl的默认值为{ 1 : 0 }对于规模所以它会逐渐消失。
+   为了触发动画，我们在容器中添加了一个单击事件侦听器，然后运行shapeswirl.replay() .
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+    }
+    #shapeswirl1 {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="shapeswirl1" class="item"></div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      //创建形状
+      class Start extends mojs.CustomShape {
+        getShape() {
+          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
+        }
+        getLength() {
+          return 300;
+        }
+      }
+
+      mojs.addShape("start", Start);
+      const shapeswirl = new mojs.ShapeSwirl({
+        parent: "#shapeswirl1",
+        shape: "start",
+        fill: "#F64040",
+        y: { 0: -150 },
+        duration: 1000,
+        width: 100,
+        height: 100,
+        top: "15%",
+        left: "10%",
+      });
+
+      document
+        .getElementById("shapeswirl1")
+        .addEventListener("click", function () {
+          shapeswirl.replay();
+        });
+    </script>
+  </body>
+</html>
+
+```
+ 效果：<br>
+![](../.vuepress/public/images/example7.gif)
+
+   为了让你控制这种行为，ShapeSwirl接受更多的属性，因此可以定义路径和其他支持参数的频率或大小：
+
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <style>
+    #container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .item {
+      width: 300px;
+      height: 300px;
+    }
+    #shapeswirl1 {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="shapeswirl1" class="item"></div>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+      //创建形状
+      class Start extends mojs.CustomShape {
+        getShape() {
+          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
+        }
+        getLength() {
+          return 300;
+        }
+      }
+
+      mojs.addShape("start", Start);
+      const shapeswirl = new mojs.ShapeSwirl({
+        parent: "#shapeswirl1",
+        shape: "start",
+        fill: "#F64040",
+        width: 100,
+        height: 100,
+        top: "15%",
+        left: "10%",
+        y: { 0: -150 },
+        // other props:
+        isSwirl: true, // sets if the shape should follow sinusoidal path, true by default
+        swirlSize: 10, // defines amplitude of the sine
+        swirlFrequency: 3, // defines frequency of the sine
+        pathScale: "rand( .1, 1 )", // defines how much the total path length should be scaled
+        direction: 1, // direction of the sine could be 1 or -1
+        degreeShift: 45, // rotatation shift for the sinusoidal path
+      });
+
+      document
+        .getElementById("shapeswirl1")
+        .addEventListener("click", function () {
+          shapeswirl.replay();
+        });
+    </script>
+  </body>
+</html>
+```
+ 效果：<br>
+![](../.vuepress/public/images/example8.gif)
+
+
+ #### 1. isSwirl
+这个`isSwirl`财产(是的默认情况下）定义形状是否应遵循正弦路径（如果设置为）false它的行为和简单的一模一样形状 
+```js
+无
+```
+ #### 2. swirlSize
+这个`swirlSize`财产( ten默认情况下）定义正弦的偏差或振幅。下面是一个例子`swirlSize: 35` :
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000,
+  direction:       -1,
+});
+```
+ #### 3. 涡流频率
+这个`swirlFrequency`财产( three默认情况下）定义正弦的频率，下面是一个swirlFrequency: 10 :
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlFrequency: 10,
+  duration:       1000,
+});
+
+```
+ ####  4方向
+这个`direction`财产( one默认情况下）定义正弦振幅的方向-它的值为1或 -1. 以下是-1. 注意它是如何从左边开始而不是从右边开始的：
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  direction:      -1,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000
+});
+```
+#### 5 路径标度
+这个pathScale财产( one默认情况下）定义正弦路径的缩放大小。下面是一个pathScale: .5-将正弦放大一半（原始半径）：
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+```
+pathScale缩放漩涡的实际路径，例如，如果要为十属性，则路径比例将影响y和十-形状在移动时形成的实际路径
+```js
+
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  x:              { 0: -100 },
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+
+```
+
+
+#### 6 键盘标签
+这个degreeShift财产( zero默认情况下）定义漩涡的旋转。当shapeSwirl用于其他模块（如爆裂)。现在它的作用就像正弦路径的旋转一样。下面是一个例子degreeShift: 90 :
+
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  degreeShift:    90,
+  duration:       1000,
+});
+```
+ 效果：<br>
+![](../.vuepress/public/images/example9.gif)
+
 ### 点击mojs创建的形状,修改形状
 
 ```js
@@ -1231,228 +1453,6 @@ const shape = new mojs.Shape({
  效果：<br>
 ![](../.vuepress/public/images/example6.gif)
 
-###  ShapeSwirl
-   翻译为形状线，`ShapeSwirl`模块基本上是形状加上更多的功能。ShapeSwirl会自动计算形状的正弦x/y路径，使其易于通过正弦轨迹发送形状。
-
-   `请注意`:ShapeSwirl的默认值为{ 1 : 0 }对于规模所以它会逐渐消失。
-   为了触发动画，我们在容器中添加了一个单击事件侦听器，然后运行shapeswirl.replay() .
-```js
-<html>
-  <head>
-    <title></title>
-  </head>
-  <style>
-    #container {
-      width: 100%;
-      height: 100%;
-    }
-
-    .item {
-      width: 300px;
-      height: 300px;
-    }
-    #shapeswirl1 {
-      background-color: aquamarine;
-    }
-  </style>
-  <body>
-    <div id="container">
-      <div id="shapeswirl1" class="item"></div>
-    </div>
-    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script>
-      //创建形状
-      class Start extends mojs.CustomShape {
-        getShape() {
-          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
-        }
-        getLength() {
-          return 300;
-        }
-      }
-
-      mojs.addShape("start", Start);
-      const shapeswirl = new mojs.ShapeSwirl({
-        parent: "#shapeswirl1",
-        shape: "start",
-        fill: "#F64040",
-        y: { 0: -150 },
-        duration: 1000,
-        width: 100,
-        height: 100,
-        top: "15%",
-        left: "10%",
-      });
-
-      document
-        .getElementById("shapeswirl1")
-        .addEventListener("click", function () {
-          shapeswirl.replay();
-        });
-    </script>
-  </body>
-</html>
-
-```
- 效果：<br>
-![](../.vuepress/public/images/example7.gif)
-
-   为了让你控制这种行为，ShapeSwirl接受更多6属性，因此可以定义路径和其他支持参数的频率或大小：
-
-```js
-<html>
-  <head>
-    <title></title>
-  </head>
-  <style>
-    #container {
-      width: 100%;
-      height: 100%;
-    }
-
-    .item {
-      width: 300px;
-      height: 300px;
-    }
-    #shapeswirl1 {
-      background-color: aquamarine;
-    }
-  </style>
-  <body>
-    <div id="container">
-      <div id="shapeswirl1" class="item"></div>
-    </div>
-    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script>
-      //创建形状
-      class Start extends mojs.CustomShape {
-        getShape() {
-          return '<path d="M92.6 7.4c-10-9.9-26-9.9-35.9 0l-4.4 4.3a3.4 3.4 0 0 1-4.7 0l-4.3-4.3c-10-9.9-26-9.9-35.9 0a25 25 0 0 0 0 35.5l22.4 22.2 13.5 13.4a9.5 9.5 0 0 0 13.4 0L70.2 65 92.6 43a25 25 0 0 0 0-35.5z"/>';
-        }
-        getLength() {
-          return 300;
-        }
-      }
-
-      mojs.addShape("start", Start);
-      const shapeswirl = new mojs.ShapeSwirl({
-        parent: "#shapeswirl1",
-        shape: "start",
-        fill: "#F64040",
-        width: 100,
-        height: 100,
-        top: "15%",
-        left: "10%",
-        y: { 0: -150 },
-        // other props:
-        isSwirl: true, // sets if the shape should follow sinusoidal path, true by default
-        swirlSize: 10, // defines amplitude of the sine
-        swirlFrequency: 3, // defines frequency of the sine
-        pathScale: "rand( .1, 1 )", // defines how much the total path length should be scaled
-        direction: 1, // direction of the sine could be 1 or -1
-        degreeShift: 45, // rotatation shift for the sinusoidal path
-      });
-
-      document
-        .getElementById("shapeswirl1")
-        .addEventListener("click", function () {
-          shapeswirl.replay();
-        });
-    </script>
-  </body>
-</html>
-```
- 效果：<br>
-![](../.vuepress/public/images/example8.gif)
-
-
- ### 1. isSwirl
-这个`isSwirl`财产(是的默认情况下）定义形状是否应遵循正弦路径（如果设置为）false它的行为和简单的一模一样形状 
-```js
-
-```
- ### 2. swirlSize
-这个`swirlSize`财产( ten默认情况下）定义正弦的偏差或振幅。下面是一个例子`swirlSize: 35` :
-```js
-const swirl = new mojs.ShapeSwirl({
-  fill:           '#F64040',
-  y:              { 0: -150 },
-  radius:         8,
-  swirlSize:      35,
-  swirlFrequency: 4,
-  duration:       1000,
-  direction:       -1,
-});
-```
- ### 3. 涡流频率
-这个`swirlFrequency`财产( three默认情况下）定义正弦的频率，下面是一个swirlFrequency: 10 :
-```js
-const swirl = new mojs.ShapeSwirl({
-  fill:           '#F64040',
-  y:              { 0: -150 },
-  radius:         8,
-  swirlFrequency: 10,
-  duration:       1000,
-});
-
-```
- ###  4方向
-这个`direction`财产( one默认情况下）定义正弦振幅的方向-它的值为1或 -1. 以下是-1. 注意它是如何从左边开始而不是从右边开始的：
-```js
-const swirl = new mojs.ShapeSwirl({
-  fill:           '#F64040',
-  y:              { 0: -150 },
-  radius:         8,
-  direction:      -1,
-  swirlSize:      35,
-  swirlFrequency: 4,
-  duration:       1000
-});
-```
-### 5 路径标度
-这个pathScale财产( one默认情况下）定义正弦路径的缩放大小。下面是一个pathScale: .5-将正弦放大一半（原始半径）：
-```js
-const swirl = new mojs.ShapeSwirl({
-  fill:           '#F64040',
-  y:              { 0: -150 },
-  radius:         8,
-  pathScale:      .5,
-  duration:       1000,
-});
-```
-pathScale缩放漩涡的实际路径，例如，如果要为十属性，则路径比例将影响y和十-形状在移动时形成的实际路径
-```js
-
-const swirl = new mojs.ShapeSwirl({
-  fill:           '#F64040',
-  x:              { 0: -100 },
-  y:              { 0: -150 },
-  radius:         8,
-  pathScale:      .5,
-  duration:       1000,
-});
-
-```
-
-
-### 6 键盘标签
-这个degreeShift财产( zero默认情况下）定义漩涡的旋转。当shapeSwirl用于其他模块（如爆裂)。现在它的作用就像正弦路径的旋转一样。下面是一个例子degreeShift: 90 :
-
-```js
-const swirl = new mojs.ShapeSwirl({
-  fill:           '#F64040',
-  y:              { 0: -150 },
-  radius:         8,
-  degreeShift:    90,
-  duration:       1000,
-});
-```
- 效果：<br>
-![](../.vuepress/public/images/example9.gif)
-
-
 
 
 实例的方法：
@@ -1464,19 +1464,686 @@ const swirl = new mojs.ShapeSwirl({
 
 .replay() // 重播动画，相当于stop + play
 
+##  Burst(爆破)
+`Burst`是一个高阶模块，可以在屏幕的任何部分创建复杂的视觉效果。你能想到爆裂作为一个粒子发射器`ShapeSwirl`在一起，形成一个粒子圈。
+
+### API参考：
+```js
+
+const burst = new mojs.Burst({
+
+  /* BURST PROPERTIES */
+
+  // Parent of the module. {String, Object} [selector, HTMLElement]
+  parent:           document.body,
+
+  // Class name. {String}
+  className:        '',
+
+  // ∆ , Units :: Left position of the module. {Number, String}
+  left:             '50%',
+
+  // ∆ , Units :: Top position of the module. {Number, String}
+  top:              '50%',
+
+  // ∆ , Units :: X shift. {Number, String}
+  x:                0,
+
+  // ∆ , Units :: Y shift. {Number, String}
+  y:                0,
+
+  // ∆ :: Angle. {Number, String}
+  rotate:            0,
+
+  // ∆ :: Scale of the module. {Number}
+  scale:            1,
+
+  // ∆ :: Explicit scaleX value (fallbacks to `scale`). {Number}
+  scaleX:           null,
+
+  // ∆ :: Explicit scaleX value (fallbacks to `scale`). {Number}
+  scaleY:           null,
+
+  // ∆ , Unit :: Origin for `x`, `y`, `scale`, `rotate` properties. {String}
+  origin:           '50% 50%',
+
+  // ∆ :: Opacity. {Number} [ 0..1 ]
+  opacity:          1,
+
+  /*
+    Radius of the radial shape that child particles form. Note that it has different meaning compared to shape-swirl. Burst `radius` defines radius of the children module
+  */
+  radius:       null,
+
+  // Quantity of Burst particles. {Number} [ > 0 ]
+  count:    5,
+
+  // Degree of circlular shape that the particles form. {Number} [ > 0 ]
+  degree:   360,
+
+  // ∆ :: Radius of the Burst. {Number}
+  radius:   { 0: 50 },
+
+  // ∆ :: Radius X of the Burst (fallbacks to `radius`). {Number}
+  radiusX:  null,
+
+  // ∆ :: Radius Y of the Burst (fallbacks to `radius`). {Number}
+  radiusY:  null,
+
+  // If should hide module with `transforms` instead of `display`. {Boolean}
+  isSoftHide:       true,
+
+  // If should trigger composite layer for the module. {Boolean}
+  isForce3d:        false,
+
+  // If should be shown before animation starts. {Boolean}
+  isShowStart:      false,
+
+  // If should stay shown after animation ends. {Boolean}
+  isShowEnd:        true,
+
+  // If refresh state on subsequent plays. {Boolean}
+  isRefreshState:   true,
+
+  /*
+    Options for each children ShapeSwirl element. {Object}
+    Supports `Stagger` strings for numeric values and `Property Maps` overall.
+    see `Stagger Strings` and `Property Maps` section for more info.
+  */
+  children: {
+    /* (+) SHAPE SWIRL PROPERTIES AND CALLBACKS (excluding `x` and `y`) - see ShapeSwirl API */
+  }
+
+  // Options for timeline that controls all child and main Shape Swirls. {Object}
+  timeline: {
+   /* (+) TIMELINE PROPERTIES AND CALLBACKS - see Tween API */
+  }
+
+})
+
+  /*
+    Creates next state transition chain.
+    @param options {Object} Next shape state.
+  */
+  .then({ /* next state options */ })
+
+  /*
+    Tunes start state with new options.
+    @param options {Object} New start properties.
+  */
+  .tune({ /* new start properties */ })
+
+  /*
+    Regenerates all randoms in initial properties.
+  */
+  .generate()
+
+  /*
+    Starts playback.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .play( shift = 0 )
+  /*
+    Starts playback in backward direction.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .playBackward( shift = 0 )
+  /*
+    Pauses playback.
+  */
+  .pause()
+  /*
+    Restarts playback.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .replay( shift = 0 )
+  /*
+    Restarts playback in backward direction.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .replayBackward( shift = 0 )
+  /*
+    Resumes playback in direction it was prior to `pause`.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .resume( shift = 0 )
+  /*
+    Sets progress of the tween.
+    @param progress {Number} Progress to set [ 0..1 ].
+  */
+  .setProgress( progress )
+  /*
+    Sets speed of the tween.
+    @param speed {Number} Progress to set [ 0..∞ ].
+  */
+  setSpeed ( speed )
+
+  /* Stops and resets the tween. */
+  reset ( speed )
+
+  ```
+默认情况下的代码：
+```js
+const burst = new mojs.Burst();
+document.addEventListener( 'click', function (e) {
+  burst.replay();
+});
+```
+完成代码：
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+          radius: { 0: 44440 },
+          count:    30
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+```
+
+效果：<br>
+![](../.vuepress/public/images/burst1.gif)
+
+就像和`Shape`，`mojs`负责所有的引导工作，为爆发创建尽可能窄的容器，并为您定位效果。
+
+radius属性：代表控制粒子的径向形状的半径。
+count属性:   代表多少个粒子数
+
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 460 },
+        count: 30,
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+```
+效果：<br>
+![](../.vuepress/public/images/burst2.gif)
+
+在默认属性中，爆炸的粒子均匀地分布在一个360度的圆圈里，你可以用`degree`属性可以分配粒子的范围（相当于把所有的粒子都集中在一个角度范围内显示）：
+
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        degree: 30,
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+```
+效果：<br>
+![](../.vuepress/public/images/burst3.gif)
 
 
+angle代表爆炸的粒子的在扩散的旋转运行
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        angle: { 0: 90 },
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+
+```
+效果：<br>
+![](../.vuepress/public/images/burst4.gif)
+
+### Children Options
+burst有一个属性`children`，这个属性好像下面有关于`fill`、`stroek`等等基本属性，可以控制粒子在扩散中的颜色，形状的变化
+
+基本默认样式：
+```js
+
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        angle: { 0: 90 },
+        children: {
+          fill: { magenta: "cyan" },
+          duration: 2000,
+        },
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+
+```
+效果：<br>
+![](../.vuepress/public/images/burst5.gif)
 
 
+关于burst可以把`Shape`当自己的子元素使用相当于children，dhildren该属性可以使用Shape的所有预属性。
 
 
+```js
+
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        angle: { 0: 90 },
+        children: {
+          fill: { magenta: "cyan" },
+          duration: 2000,
+          shape: "polygon",
+          radius: 20,
+          angle: { 360: 0 },
+          duration: 2000,
+          points: 5,
+        },
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+```
+效果：<br>
+![](../.vuepress/public/images/burst6.gif)
+
+#### Stagger Strings
+`Stagger Strings`用于表示具有某些已定义步骤的连续数值(相当于多个相同形状连续的放大，扩散等)（请参见子级的延迟属性）：
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        angle: { 0: 90 },
+        children: {
+          fill: { magenta: "cyan" },
+          duration: 2000,
+          shape: "polygon",
+          radius: 20,
+          angle: { 360: 0 },
+          duration: 2000,
+          points: 5,
+          delay: "stagger(0, 100)",
+        },
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+```
+效果：<br>
+![](../.vuepress/public/images/burst7.gif)
 
 
+`stagger(0, 100)` k开始值为0 每隔100就出现一个形状，第一个参数：初始值，第二个参数：步履（步数，秒数）。每个数值都可以用交错刺来表示。此外，交错刺里面的参数还可使用rand()随机函数。
+
+```js
+
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        angle: { 0: 90 },
+        children: {
+          fill: { magenta: "cyan" },
+          duration: 2000,
+          shape: "polygon",
+          radius: 20,
+          angle: { 360: 0 },
+          duration: 2000,
+          points: 5,
+          delay: "stagger(rand(0,200))",
+        },
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+ ```
+效果：<br>
+![](../.vuepress/public/images/burst8.gif)
+ 
+::: warning 注意
+如果你运行.generate()函数在播放突发之前，每次播放突发时都将重新计算所有随机值。这样地：
+```js
+burst.generate();
+burst.replay();
+```
+:::
+
+#### Property Maps
+属性映射被设计用来表示顺序值。您可以使用它来生成重复但映射到子长度的值。基本上，它只是一个数组，它将它的值映射到子索引mod功能。 类似于给每个孩子添加不同的属性值，如fill,storke,而且这些属性是通过数组来设置。
+```js
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
+    <script>
+      const burst = new mojs.Burst({
+        radius: { 0: 100 },
+        count: 10,
+        angle: { 0: 90 },
+        children: {
+          fill: [
+            { deeppink: "#F505C9" },
+            { cyan: "#11E3F8" },
+            { yellow: "#F89C11" },
+            { red: "#AE11F8" },
+          ],
+          duration: 2000,
+          shape: "polygon",
+          radius: 20,
+          angle: { 360: 0 },
+          duration: 2000,
+          points: 5,
+          delay: "stagger(rand(0,200))",
+        },
+      });
+      document.addEventListener("click", function (e) {
+        burst.replay();
+      });
+    </script>
+  </body>
+</html>
+
+```
+效果：<br>
+![](../.vuepress/public/images/burst9.gif)
+
+属性映射可以处理任何属性和属性形式，事实上，它只是一个棱镜（或多路复用器），它通过模函数向子对象提供属性。如果您想显式地为child设置一些属性，这是一个很好的帮助。
+
+### then, tune, generate and play
+
+可以使用then、tune、generate、busrt做类似Shape或者ShapeSwirl。也可以使用tween接口公共方法如play,serProgress、replay.
+
+```js
+<html>
+  <head>
+    <title></title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      let burst = new mojs.Burst({
+        parent: ".container",
+        radius: { 0: 50 },
+        angle: { 360: 0 },
+        x: 0,
+        y: 0,
+        left: "0%",
+        top: "0%",
+        width: 300,
+        height: 300,
+        children: {
+          fill: [
+            { deeppink: "#F505C9" },
+            { cyan: "#11E3F8" },
+            { yellow: "#F89C11" },
+            { red: "#AE11F8" },
+          ],
+          duration: 2000,
+          shape: "polygon",
+          radius: 20,
+          angle: { 360: 0 },
+          duration: 2000,
+          points: 5,
+          delay: "stagger(rand(0,200))",
+        },
+      });
+
+      document.addEventListener("click", function (e) {
+        burst.tune({ x: e.pageX, y: e.pageY }).setSpeed(3).replay();
+      });
+    </script>
+  </body>
+</html>
+
+```
+效果：<br>
+![](../.vuepress/public/images/burst10.gif)
 
 
+案例1：
+点击界面，形成一个线段组成的图片；
+```js
+<html>
+  <head>
+    <title></title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      let burst = new mojs.Burst({
+        parent: ".container",
+        radius: { 0: 10 },
+        left: "0%",
+        top: "0%",
+        width: 300,
+        height: 300,
+        children: {
+          fill: [
+            { deeppink: "#F505C9" },
+            { cyan: "#11E3F8" },
+            { yellow: "#F89C11" },
+            { red: "#AE11F8" },
+          ],
+          duration: 2000,
+          shape: "line",
+          strokeWidth: 1,
+          stroke: "#FD7932",
+          radius: 20,
+          angle: { 360: 0 },
+          duration: 2000,
+          points: 5,
+          delay: "stagger(rand(0,200))",
+        },
+      });
+
+      document.addEventListener("click", function (e) {
+        console.log(e);
+        burst.tune({ x: e.pageX, y: e.pageY }).setSpeed(3).replay();
+      });
+    </script>
+  </body>
+</html>
+```
+效果：<br>
+![](../.vuepress/public/images/burst11.gif)
 
 
-## mojs的HTML模块
+####  案例2
+```js
+
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      class Start extends mojs.CustomShape {
+        getShape() {
+          return `<path d="M5.51132201,34.7776271 L33.703781,32.8220808 L44.4592855,6.74813038 C45.4370587,4.30369752 47.7185293,3 50,3 C52.2814707,3 54.5629413,4.30369752 55.5407145,6.74813038 L66.296219,32.8220808 L94.488678,34.7776271 C99.7034681,35.1035515 101.984939,41.7850013 97.910884,45.2072073 L75.9109883,63.1330483 L82.5924381,90.3477341 C83.407249,94.4217888 80.4739296,97.6810326 77.0517236,97.6810326 C76.0739505,97.6810326 74.9332151,97.3551083 73.955442,96.7032595 L49.8370378,81.8737002 L26.044558,96.7032595 C25.0667849,97.3551083 23.9260495,97.6810326 22.9482764,97.6810326 C19.3631082,97.6810326 16.2668266,94.4217888 17.4075619,90.3477341 L23.9260495,63.2960105 L2.08911601,45.2072073 C-1.98493875,41.7850013 0.296531918,35.1035515 5.51132201,34.7776271 Z" />`;
+        }
+        getLength() {
+          return 500;
+        }
+      }
+      mojs.addShape("start", Start);
+
+      let startLine = new mojs.Burst({
+        top: 0,
+        left: 0,
+        width: 100,
+        height: 100,
+        radius: { 0: 50 },
+        count: 5,
+        angle: { 360: 0 },
+        children: {
+          shape: "start",
+          fill: [
+            { deeppink: "#F505C9" },
+            { cyan: "#11E3F8" },
+            { yellow: "#F89C11" },
+            { red: "#AE11F8" },
+          ],
+          duration: 2000,
+          radius: 20,
+          //   angle: { 360: 0 },
+          duration: 2000,
+          delay: "stagger(rand(0,200))",
+        },
+      });
+
+      let start = new mojs.Shape({
+        top: 0,
+        left: 0,
+        opacity: { 0: 0.8 },
+        shape: "start",
+        fill: "#F89C11",
+        duration: 2000,
+        radius: 20,
+        duration: 2000,
+        delay: "stagger(rand(0,200))",
+      });
+
+      let circle = new mojs.Shape({
+        shape: "circle",
+        top: 0,
+        left: 0,
+        width: 80,
+        height: 80,
+        fill: "none",
+        stroke: "#AE11F8",
+        angle: { 360: 0 },
+        scale: { 0: 0.8 },
+        strokeWidth: { 50: 0 },
+        duration: 3000,
+      });
+      const timeline = new mojs.Timeline({ speed: 1.5 });
+      timeline.add(start, startLine, circle);
+      document.addEventListener("click", function (e) {
+        startLine.tune({ x: e.pageX, y: e.pageY });
+        start.tune({ x: e.pageX, y: e.pageY });
+        circle.tune({ x: e.pageX, y: e.pageY });
+        timeline.play();
+      });
+    </script>
+  </body>
+</html>
+```
+效果：<br>
+![](../.vuepress/public/images/burst12.gif)
+
+## HTML模块
    HTML模块可用于为网页上的不同HTML元素设置动画。
    为dom元素设置动画
 
@@ -1534,6 +2201,195 @@ const swirl = new mojs.ShapeSwirl({
 ```
  效果：<br>
 ![](../.vuepress/public/images/example10.gif)
+
+#### APi参考
+模块有`transforms`/`opacity` (`十` ,`y` ,`opacity`等）下面列出的预定义属性。浏览器可以很容易地处理这些属性的动画，所以理想情况下您不应该使用预定义集之外的属性。
+
+
+```js
+
+const html = new mojs.Html({
+  // HTMLElement to animate. {String, Object} [selector, HTMLElement]
+  el:           null,
+  // ∆ :: translateX property. {String, Number, Object} [value, delta]
+  x:          0,
+  // ∆ :: translateY property. {String, Number, Object} [value, delta]
+  y:          0,
+  // ∆ :: translateZ property. {String, Number, Object} [value, delta]
+  z:          0,
+  // ∆ :: skewX property. {String, Number, Object} [value, delta]
+  skewX:      0,
+  // ∆ :: skewY property. {String, Number, Object} [value, delta]
+  skewY:      0,
+  // ∆ :: rotateX property. {String, Number, Object} [value, delta]
+  rotateX:     0,
+  // ∆ :: rotateY property. {String, Number, Object} [value, delta]
+  rotateY:     0,
+  // ∆ :: rotateZ property. {String, Number, Object} [value, delta]
+  rotateZ:     0,
+  // ∆ :: scale property. {String, Number, Object} [value, delta]
+  scale:      1,
+  // ∆ :: scaleX property. {String, Number, Object} [value, delta]
+  scaleX:     1,
+  // ∆ :: scaleY property. {String, Number, Object} [value, delta]
+  scaleY:     1,
+  // ∆ :: opacity property. {String, Number, Object} [value, delta]
+  opacity:    1,
+
+  /*
+    For other CSS properties please see `Other CSS properties` section.
+  */
+
+  // Custom properties to alter mojs behaviour (see `Teach mojs with customProperties` section). {Object}
+  customProperties: null,
+  // If should be shown before animation starts. {Boolean}
+  isShowStart:      true,
+  // If should stay shown after animation ends. {Boolean}
+  isShowEnd:        true,
+  // If should trigger composite layer for the module. {Boolean}
+  isForce3d:        false,
+  // If should hide module with `transforms` instead of `display`. {Boolean}
+  isSoftHide:       true,
+  // If refresh state on subsequent plays. {Boolean}
+  isRefreshState:   true,
+  // Context callbacks will be called with. {Object}
+  callbacksContext: this
+
+  /* TWEEN PROPERTIES */
+  // Duration {Number}
+  duration:       350,
+  // Delay {Number}
+  delay:          0,
+  // If should repeat after animation finished {Number} *(1)
+  repeat:         0,
+  // Speed of the tween {Number}[0..∞]
+  speed:          1,
+  // If the progress should be flipped on repeat animation end {Boolean}
+  isYoyo:         false,
+  // Easing function {String, Function}[ easing name, path coordinates, bezier string, easing function ]
+  easing:         'sin.out',
+  // Easing function for backward direction of the tween animation (fallbacks to `easing`) {String, Function}[ easing name, path coordinates, bezier string, easing function ]
+  backwardEasing: null,
+  // properties fro entire timeline
+  timeline: {
+   /* (+) TIMELINE PROPERTIES AND CALLBACKS - see Tween API */
+  },
+
+  /* TWEEN CALLBACKS */
+  /*
+    Fires on every update of the tween in any period (including delay periods). You probably want to use `onUpdate` method instead.
+    @param p {Number} Normal (not eased) progress.
+    @param isForward {Boolean} Direction of the progress.
+    @param isYoyo {Boolean} If in `yoyo` period.
+  */
+  onProgress (p, isForward, isYoyo) {},
+  /*
+    Fires when tween's the entire progress reaches `0` point(doesn't fire in repeat periods).
+    @param isForward {Boolean} If progress moves in forward direction.
+    @param isYoyo {Boolean} If progress inside `yoyo` flip period.
+  */
+  onStart (isForward, isYoyo) {},
+  /*
+    Fires when tween's the progress reaches `0` point in normal or repeat period.
+    @param isForward {Boolean} If progress moves in forward direction.
+    @param isYoyo {Boolean} If progress inside `yoyo` flip period.
+  */
+  onFirstUpdate (isForward, isYoyo) {},
+  /*
+    Fires on first update of the tween in sufficiently active period (excluding delay periods).
+    @param ep {Number} Eased progress.
+    @param p {Number} Normal (not eased) progress.
+    @param isForward {Boolean} Direction of the progress.
+    @param isYoyo {Boolean} If in `yoyo` period.
+  */
+  onUpdate (ep, p, isForward, isYoyo) {},
+  /*
+    Fires when tween's the progress reaches `1` point in normal or repeat period.
+    @param isForward {Boolean} If progress moves in forward direction.
+    @param isYoyo {Boolean} If progress inside `yoyo` flip period.
+  */
+  onRepeatComplete (isForward, isYoyo) {},
+  /*
+    Fires when tween's the entire progress reaches `1` point(doesn't fire in repeat periods).
+    @param isForward {Boolean} If progress moves in forward direction.
+    @param isYoyo {Boolean} If progress inside `yoyo` flip period.
+  */
+  onComplete (isForward, isYoyo) {},
+  /* Fires when the `.play` method called and tween isn't in play state yet. */
+  onPlaybackStart () {},
+  /* Fires when the `.pause` method called and tween isn't in pause state yet. */
+  onPlaybackPause () {},
+  /* Fires when the `.stop` method called and tween isn't in stop state yet. */
+  onPlaybackStop () {},
+  /* Fires when the tween end's animation (regardless progress) */
+  onPlaybackComplete () {},
+
+})
+  /*
+    Creates next state transition chain.
+    @param options {Object} Next shape state.
+  */
+  .then({ /* next state options */ })
+
+  /*
+    Starts playback.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .play( shift = 0 )
+  /*
+    Starts playback in backward direction.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .playBackward( shift = 0 )
+  /*
+    Resumes playback in direction it was prior to `pause`.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .resume( shift = 0 )
+  /*
+    Pauses playback.
+  */
+  .pause()
+  /*
+    Stops playback.
+    @param {Number} Progress to set after the stop [0...1].
+  */
+  .stop( progress = 0 )
+  /*
+    Restarts playback.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .replay( shift = 0 )
+  /*
+    Restarts playback in backward direction.
+    @param shift {Number} Start progress shift in milliseconds.
+  */
+  .replayBackward( shift = 0 )
+  /*
+    Sets progress of the tween.
+    @param progress {Number} Progress to set [ 0..1 ].
+  */
+  .setProgress( progress )
+  /*
+    Sets speed of the tween.
+    @param speed {Number} Progress to set [ 0..∞ ].
+  */
+  .setSpeed ( speed )
+
+  /* Stops and resets the tween. */
+  .reset ( speed )
+```
+
+那么，如何使用mojs的html模块的属性呢？？
+
+
+
+
+
+
+
+
+
 
  ## 案例：
 
