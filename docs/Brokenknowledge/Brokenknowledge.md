@@ -1,13 +1,10 @@
-#碎知识点
+# 碎知识点
 
 ### 数字反转
 ```js
-const reverseNumber = n =>
-  parseFloat(`${n}`.split('').reverse().join('')) * Math.sign(n);
-
+const reverseNumber = n =>parseFloat(`${n}`.split('').reverse().join('')) * Math.sign(n);
 reverseNumber(123); // 321
 ```
-
 ### 判断对象的属性是否空
 ```js
     var queryParams= {
