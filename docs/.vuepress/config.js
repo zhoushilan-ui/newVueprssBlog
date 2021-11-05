@@ -33,6 +33,7 @@ module.exports = {
       "/Brokenknowledge/": ["", "/Brokenknowledge/Brokenknowledge.html"],
       "/textillatejs/": ["", "/textillatejs/textillatejs.html"],
       "/vue3-knowledge/": ["", "/vue3-knowledge/vue3-knowledge.html"],
+      "/Echarts/": ["", "/Echarts/Basics.html"],
     },
     sidebar: "auto", // 侧边栏配置
     sidebarDepth: 2, // 侧边栏显示2级

@@ -3,6 +3,8 @@
 ## [reveal.js网页版ppt](/Webversion/)
 ## [Mojs](/mojs/)
 ## [Pixijs](/PIxijs/)
+## [图表](/Echarts/)
+## [地图](/Map/)
 ## [SVG Mesh 3d](/svg-mesh-3d/)
 ## [textillate.js(文本/文字动画)](/textillatejs/)
 ## [ES6的常用用法](/ES6/)

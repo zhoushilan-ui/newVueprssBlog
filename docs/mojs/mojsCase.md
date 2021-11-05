@@ -187,4 +187,96 @@
 ```
 
 ## 案例2
-  创建一个点击dom元素，出现地图坐标标识符的动画效果。
+ 创建一个轮盘正方向旋转，中间有四个放大缩小的圆。
+  ```js
+<html>
+  <head>
+    <title></title>
+    <style>
+      html,
+      body {
+        /* background-color: black; */
+      }
+    </style>
+  </head>
+  <body>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      //创建圆形高斯模糊
+      class Vague extends mojs.CustomShape {
+        getShape() {
+          return `
+          <defs>
+            <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop offset="10%" style="stop-color:rgb(246,241,93);stop-opacity:0.4" />
+              <stop offset="100%" style="stop-color:rgb(246,241,93);stop-opacity:0.8" />
+            </radialGradient>
+          </defs>
+         <ellipse cx="50" cy="50" rx="50" ry="50" fill="url(#grad1)"/>   `;
+        }
+      }
+
+      mojs.addShape("vague", Vague);
+      let circle1 = new mojs.Shape({
+        shape: "circle",
+        width: 250,
+        height: 250,
+        radius: 100,
+        fill: "none",
+        stroke: "#F6F15D",
+        strokeWidth: 1,
+      });
+
+      let circle2 = new mojs.Shape({
+        shape: "circle",
+        width: 250,
+        height: 250,
+        radius: 88,
+        fill: "none",
+        stroke: "#F6F15D",
+        strokeWidth: 5,
+        strokeLinecap: "square",
+        strokeDasharray: 18,
+        angle: { 0: 360 },
+        duration: 20000,
+      });
+
+      let circle3 = new mojs.Shape({
+        shape: "vague",
+        width: 250,
+        height: 250,
+        radius: 75,
+        duration: 20000,
+      });
+
+      let burst1 = new mojs.Burst({
+        width: 100,
+        height: 100,
+        count: 4,
+        radius: { 0: 50 },
+        angle: { 0: 90 },
+        children: {
+          shape: "circle",
+          radius: 10,
+          isYoyo: true,
+          fill: "#F6C25D",
+          repeat: 10,
+          duration: 2000,
+        },
+      });
+
+      let timeline = new mojs.Timeline({
+        repeat: 1000,
+      });
+      timeline.add(circle1, circle2, circle3, burst1);
+      timeline.replay();
+    </script>
+  </body>
+</html>
+  ```
+  效果：<br>
+![](../.vuepress/public/images/caseeffect1.gif)
+
+## 案例3
+
