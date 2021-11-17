@@ -24,3 +24,11 @@ reverseNumber(123); // 321
         }
       }
 ```
+[类型转换](https://1loc.dev/array/check-if-an-array-is-empty/)
+
+## 将值强制转换成数组
+```js
+// `arr` is an array
+const isEmpty = (arr) => !Array.isArray(arr) || arr.length === 0;
+
+```
