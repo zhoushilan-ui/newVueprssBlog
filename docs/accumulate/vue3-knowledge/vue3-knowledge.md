@@ -8,7 +8,7 @@ $ cd vue3-experiment
 $ npm i
 ```
 效果：<br>
-![](../.vuepress/public/images/vue3-img1.png)
+![](../../.vuepress/public/images/vue3-img1.png)
 
    删除项目中模板，也就是文件src下面的内容，然后运行项目 
 
@@ -17,8 +17,8 @@ $ rm -rf src/*
 $ touch src/main.js
 ```
 效果：<br>
-![](../.vuepress/public/images/vue3-img2.png)
-![](../.vuepress/public/images/vue3-img3.png)
+![](../../.vuepress/public/images/vue3-img2.png)
+![](../../.vuepress/public/images/vue3-img3.png)
 
 在src文件下面的main.js文件中引入createApp函数，这个函数是用来创建vue3的应用。createApp中的参数选项使用于配置根组件。然后在使用mount()挂载应用.把应用挂载一个dom元素上去。
 代码中mount()函数就是把应用挂载在`#app`。App是整个项目的根组件。
@@ -64,7 +64,7 @@ Modal.vue
 ```
 
 效果：<br>
-![](../.vuepress/public/images/vue3-img4.gif)
+![](../../.vuepress/public/images/vue3-img4.gif)
 
 
 ### Vue3 模板语法
@@ -102,7 +102,7 @@ export default {
 </script>
 ```
 效果：<br>
-![](../.vuepress/public/images/vue3-img5.gif)
+![](../../.vuepress/public/images/vue3-img5.gif)
 
 #### v-html指令 
 v-html指令是用于输出html代码：
@@ -132,7 +132,7 @@ export default {
 </script>
 ```
 效果：<br>
-![](../.vuepress/public/images/vue3-img6.png)
+![](../../.vuepress/public/images/vue3-img6.png)
 
 #### 属性 绑定指令v-bind(简写 : )
 对于布尔属性，常规值为 true 或 false，如果属性值为 null 或 undefined，则该属性不会显示出来。所以`:`可以用来添加属性，比如，添加很多个class类名。

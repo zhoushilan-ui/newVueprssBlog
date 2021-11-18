@@ -100,7 +100,7 @@
 ```
 
 效果：
-![](../.vuepress/public/images/80d69422842599ec55dda95dcba9aee8.gif)
+![](../../.vuepress/public/images/80d69422842599ec55dda95dcba9aee8.gif)
 
 #### reveal.js的属性
 表格内容：
@@ -219,7 +219,7 @@
 
 
 #### 主题样式
-![](../.vuepress/public/images/theme.png)
+![](../../.vuepress/public/images/theme.png)
 
 1. 一个`<section>`标签就是一张ppt。
 2. reveal的动画有grow，shrink，fade-out，fade-right，fade-up，fade-down，fade-left，fade-in-then-out，fade-in-then-semi-out
@@ -232,4 +232,4 @@
 
 
 ![Image text](https://t7.baidu.com/it/u=1819248061,230866778&fm=193&f=GIF)
-![](../.vuepress/public/images/80d69422842599ec55dda95dcba9aee8.gif)
+![](../../.vuepress/public/images/80d69422842599ec55dda95dcba9aee8.gif)

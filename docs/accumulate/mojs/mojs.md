@@ -101,7 +101,7 @@
 
   ```
   效果：<br>
-![](../.vuepress/public/images/example.gif)
+![](../../.vuepress/public/images/example.gif)
 
 
 ## 形状（Shape & ShapeSwirl）
@@ -477,7 +477,7 @@ const shape = new mojs.Shape({
  ```
 
 效果：<br>
-![](../.vuepress/public/images/img.png)
+![](../../.vuepress/public/images/img.png)
 
 ####  Shape案例2
 
@@ -635,7 +635,7 @@ const shape = new mojs.Shape({
  ```
 
 效果：<br>
-![](../.vuepress/public/images/example1.gif)
+![](../../.vuepress/public/images/example1.gif)
 
 ### then
 
@@ -731,7 +731,7 @@ const shape = new mojs.Shape({
 ```
 
 效果：<br>
-![](../.vuepress/public/images/exmaple2.gif)
+![](../../.vuepress/public/images/exmaple2.gif)
 
 ### Tweenable接口
 
@@ -843,7 +843,7 @@ const shape = new mojs.Shape({
 
 ```
 效果：<br>
- ![](../.vuepress/public/images/example3.gif)
+ ![](../../.vuepress/public/images/example3.gif)
 
 ### Generate
  该方法旨在重新生成形状在初始化时具有的随机性。该方法是用来生成y一个形状的随机的大小。
@@ -924,7 +924,7 @@ const shape = new mojs.Shape({
 
 ```
 效果：<br>
-![](../.vuepress/public/images/example4.gif)
+![](../../.vuepress/public/images/example4.gif)
 
 ### Custom Shapes
    自定义样式。在mojs中，有默认样式circle,rect,polygon,line,cross,equal,curve、zigzag。可以自定义样式。
@@ -1043,7 +1043,7 @@ const shape = new mojs.Shape({
 ```
 
 效果：<br>
-![](../.vuepress/public/images/exmpla5.gif)
+![](../../.vuepress/public/images/exmpla5.gif)
 
 
 ###  ShapeSwirl
@@ -1111,7 +1111,7 @@ const shape = new mojs.Shape({
 
 ```
  效果：<br>
-![](../.vuepress/public/images/example7.gif)
+![](../../.vuepress/public/images/example7.gif)
 
    为了让你控制这种行为，ShapeSwirl接受更多的属性，因此可以定义路径和其他支持参数的频率或大小：
 
@@ -1180,7 +1180,7 @@ const shape = new mojs.Shape({
 </html>
 ```
  效果：<br>
-![](../.vuepress/public/images/example8.gif)
+![](../../.vuepress/public/images/example8.gif)
 
 
  #### 1. isSwirl
@@ -1265,7 +1265,7 @@ const swirl = new mojs.ShapeSwirl({
 });
 ```
  效果：<br>
-![](../.vuepress/public/images/example9.gif)
+![](../../.vuepress/public/images/example9.gif)
 
 ### 点击mojs创建的形状,修改形状
 
@@ -1451,7 +1451,7 @@ const swirl = new mojs.ShapeSwirl({
  ```
 
  效果：<br>
-![](../.vuepress/public/images/example6.gif)
+![](../../.vuepress/public/images/example6.gif)
 
 
 
@@ -1653,7 +1653,7 @@ document.addEventListener( 'click', function (e) {
 ```
 
 效果：<br>
-![](../.vuepress/public/images/burst1.gif)
+![](../../.vuepress/public/images/burst1.gif)
 
 就像和`Shape`，`mojs`负责所有的引导工作，为爆发创建尽可能窄的容器，并为您定位效果。
 
@@ -1682,7 +1682,7 @@ count属性:   代表多少个粒子数
 </html>
 ```
 效果：<br>
-![](../.vuepress/public/images/burst2.gif)
+![](../../.vuepress/public/images/burst2.gif)
 
 在默认属性中，爆炸的粒子均匀地分布在一个360度的圆圈里，你可以用`degree`属性可以分配粒子的范围（相当于把所有的粒子都集中在一个角度范围内显示）：
 
@@ -1709,7 +1709,7 @@ count属性:   代表多少个粒子数
 </html>
 ```
 效果：<br>
-![](../.vuepress/public/images/burst3.gif)
+![](../../.vuepress/public/images/burst3.gif)
 
 
 angle代表爆炸的粒子的在扩散的旋转运行
@@ -1737,7 +1737,7 @@ angle代表爆炸的粒子的在扩散的旋转运行
 
 ```
 效果：<br>
-![](../.vuepress/public/images/burst4.gif)
+![](../../.vuepress/public/images/burst4.gif)
 
 ### Children Options
 burst有一个属性`children`，这个属性好像下面有关于`fill`、`stroek`等等基本属性，可以控制粒子在扩散中的颜色，形状的变化
@@ -1772,7 +1772,7 @@ burst有一个属性`children`，这个属性好像下面有关于`fill`、`stro
 
 ```
 效果：<br>
-![](../.vuepress/public/images/burst5.gif)
+![](../../.vuepress/public/images/burst5.gif)
 
 
 关于burst可以把`Shape`当自己的子元素使用相当于children，dhildren该属性可以使用Shape的所有预属性。
@@ -1811,7 +1811,7 @@ burst有一个属性`children`，这个属性好像下面有关于`fill`、`stro
 </html>
 ```
 效果：<br>
-![](../.vuepress/public/images/burst6.gif)
+![](../../.vuepress/public/images/burst6.gif)
 
 #### Stagger Strings
 `Stagger Strings`用于表示具有某些已定义步骤的连续数值(相当于多个相同形状连续的放大，扩散等)（请参见子级的延迟属性）：
@@ -1848,7 +1848,7 @@ burst有一个属性`children`，这个属性好像下面有关于`fill`、`stro
 </html>
 ```
 效果：<br>
-![](../.vuepress/public/images/burst7.gif)
+![](../../.vuepress/public/images/burst7.gif)
 
 
 `stagger(0, 100)` k开始值为0 每隔100就出现一个形状，第一个参数：初始值，第二个参数：步履（步数，秒数）。每个数值都可以用交错刺来表示。此外，交错刺里面的参数还可使用rand()随机函数。
@@ -1887,7 +1887,7 @@ burst有一个属性`children`，这个属性好像下面有关于`fill`、`stro
 </html>
  ```
 效果：<br>
-![](../.vuepress/public/images/burst8.gif)
+![](../../.vuepress/public/images/burst8.gif)
  
 ::: warning 注意
 如果你运行.generate()函数在播放突发之前，每次播放突发时都将重新计算所有随机值。这样地：
@@ -1938,7 +1938,7 @@ burst.replay();
 
 ```
 效果：<br>
-![](../.vuepress/public/images/burst9.gif)
+![](../../.vuepress/public/images/burst9.gif)
 
 属性映射可以处理任何属性和属性形式，事实上，它只是一个棱镜（或多路复用器），它通过模函数向子对象提供属性。如果您想显式地为child设置一些属性，这是一个很好的帮助。
 
@@ -1998,7 +1998,7 @@ burst.replay();
 
 ```
 效果：<br>
-![](../.vuepress/public/images/burst10.gif)
+![](../../.vuepress/public/images/burst10.gif)
 
 
 案例1：
@@ -2054,7 +2054,7 @@ burst.replay();
 </html>
 ```
 效果：<br>
-![](../.vuepress/public/images/burst11.gif)
+![](../../.vuepress/public/images/burst11.gif)
 
 
 ####  案例2
@@ -2141,7 +2141,7 @@ burst.replay();
 </html>
 ```
 效果：<br>
-![](../.vuepress/public/images/burst12.gif)
+![](../../.vuepress/public/images/burst12.gif)
 
 ## HTML模块
    HTML模块可用于为网页上的不同HTML元素设置动画。
@@ -2200,7 +2200,7 @@ burst.replay();
 
 ```
  效果：<br>
-![](../.vuepress/public/images/example10.gif)
+![](../../.vuepress/public/images/example10.gif)
 
 #### APi参考
 模块有`transforms`/`opacity` (`十` ,`y` ,`opacity`等）下面列出的预定义属性。浏览器可以很容易地处理这些属性的动画，所以理想情况下您不应该使用预定义集之外的属性。
@@ -2444,7 +2444,7 @@ const html = new mojs.Html({
 
 ```
  效果：<br>
-![](../.vuepress/public/images/html1.gif)
+![](../../.vuepress/public/images/html1.gif)
 
 2.点击页面,旋转html
 ```js
@@ -2501,7 +2501,7 @@ const html = new mojs.Html({
 
 ```
  效果：<br>
-![](../.vuepress/public/images/html2.gif)
+![](../../.vuepress/public/images/html2.gif)
 
  ## [Mojs完整案例](./mojsCase.md)
 

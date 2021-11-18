@@ -145,7 +145,7 @@
 ```
 
  效果：<br>
-![](../.vuepress/public/images/caseeffect.gif)
+![](../../.vuepress/public/images/caseeffect.gif)
 
   在这个案例中，使用`CustomShape`创建一个新的形状, `stagger`模块使用可以使用创建多个一样`shape`的属性的且每个形状都可以编辑形状、颜色，大小等属性。，可以通过数数组编辑对应的顺序的形状。如下所示：
 ```js
@@ -276,7 +276,7 @@
 </html>
   ```
 效果：<br>
-![](../.vuepress/public/images/caseeffect1.gif)
+![](../../.vuepress/public/images/caseeffect1.gif)
 
 ## 案例3
 
@@ -372,7 +372,7 @@
 
 ```
   效果：<br>
-![](../.vuepress/public/images/caseeffect2.gif)
+![](../../.vuepress/public/images/caseeffect2.gif)
 
 
 ## 案例4 
@@ -437,7 +437,7 @@
  ```
 
   效果：<br>
-![](../.vuepress/public/images/playerone.gif)
+![](../../.vuepress/public/images/playerone.gif)
 
 ## 案例5
 这个案例时显示图和使用外部svg。目前，好像没有方法同时引入外部svg,只用通过创建形状使用。
@@ -888,7 +888,7 @@
 ```
 
   效果：<br>
-![](../.vuepress/public/images/caseeffect3.gif)
+![](../../.vuepress/public/images/caseeffect3.gif)
 
 ## 案例6 
 
@@ -1095,4 +1095,4 @@
 </html>
 ```
   效果：<br>
-![](../.vuepress/public/images/caseeffect4.gif)
+![](../../.vuepress/public/images/caseeffect4.gif)
