@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>案例1 | 蓝懒懒的博客</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/newVueprssBlog/dog.jpg">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/newVueprssBlog/assets/css/0.styles.8da4cddc.css" as="style"><link rel="preload" href="/newVueprssBlog/assets/js/app.bf8beab7.js" as="script"><link rel="preload" href="/newVueprssBlog/assets/js/2.31544d81.js" as="script"><link rel="preload" href="/newVueprssBlog/assets/js/4.c238cf31.js" as="script"><link rel="prefetch" href="/newVueprssBlog/assets/js/10.ff55216f.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/11.26e2bb55.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/12.2b5ffd68.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/13.551bd24f.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/14.58d6140a.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/15.d0c8b03a.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/16.b9c06038.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/17.a5179a20.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/18.26e746e6.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/19.77a57daf.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/20.e325f05e.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/21.fc2e2e22.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/22.7352b8b0.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/23.a26e34c0.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/24.4043500a.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/25.2a152089.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/26.fc7e5c91.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/27.c22a85c0.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/28.3ba7d82c.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/29.28b1bae1.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/3.d0413e5d.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/30.1d534456.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/31.f516b7ba.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/32.f83de5a6.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/33.9acf7fdd.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/34.ff006147.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/35.656daa20.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/5.5796b218.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/6.94242437.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/7.e7b250c3.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/8.1d7b5587.js"><link rel="prefetch" href="/newVueprssBlog/assets/js/9.2cc5e41b.js">
+    <link rel="stylesheet" href="/newVueprssBlog/assets/css/0.styles.8da4cddc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/newVueprssBlog/" class="home-link router-link-active"><!----> <span class="site-name">蓝懒懒的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/newVueprssBlog/accumulate/" class="nav-link router-link-active">
+  前端基础
+</a></div><div class="nav-item"><a href="/newVueprssBlog/algorithm/" class="nav-link">
+  算法题库
+</a></div><div class="nav-item"><a href="https://baidu.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/newVueprssBlog/accumulate/" class="nav-link router-link-active">
+  前端基础
+</a></div><div class="nav-item"><a href="/newVueprssBlog/algorithm/" class="nav-link">
+  算法题库
+</a></div><div class="nav-item"><a href="https://baidu.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>案例1</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/newVueprssBlog/accumulate/mojs/mojsCase.html#案例1" class="sidebar-link">案例1</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/newVueprssBlog/accumulate/mojs/mojsCase.html#案例2" class="sidebar-link">案例2</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/newVueprssBlog/accumulate/mojs/mojsCase.html#案例3" class="sidebar-link">案例3</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/newVueprssBlog/accumulate/mojs/mojsCase.html#案例4" class="sidebar-link">案例4</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/newVueprssBlog/accumulate/mojs/mojsCase.html#案例5" class="sidebar-link">案例5</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/newVueprssBlog/accumulate/mojs/mojsCase.html#案例6" class="sidebar-link">案例6</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="案例1"><a href="#案例1" class="header-anchor">#</a> 案例1</h2> <p>1.使用shape,tween stagger模块创建一个动画</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>动图<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">&quot;stylesheet&quot;</span> href<span class="token operator">=</span><span class="token string">&quot;./css/demo.css&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;container&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle1&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle2&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle3&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle4&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle5&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;circle6&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs/latest/mo.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+      <span class="token comment">//创建水平线性渐变</span>
+      <span class="token keyword">class</span> <span class="token class-name">CircleGradual</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+          &lt;defs&gt;
+             &lt;linearGradient id=&quot;orange_red&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;100%&quot; y2=&quot;0%&quot;&gt;
+             &lt;stop offset=&quot;0%&quot; style=&quot;stop-color:rgb(198,57,255);
+             stop-opacity:1&quot;/&gt;
+             &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(130,152,255);
+             stop-opacity:1&quot;/&gt;
+             &lt;/linearGradient&gt;
+          &lt;/defs&gt;
+          &lt;circle  cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;  stroke-dasharray='15,5'stroke-width='5' style=&quot;stroke:url(#orange_red); &quot;/&gt;
+                      </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token number">300</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;circlegradual&quot;</span><span class="token punctuation">,</span> CircleGradual<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        parent<span class="token operator">:</span> <span class="token string">&quot;.circle1&quot;</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#004EFF&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        parent<span class="token operator">:</span> <span class="token string">&quot;.circle2&quot;</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#004EFF&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">0.9</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        parent<span class="token operator">:</span> <span class="token string">&quot;.circle3&quot;</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circlegradual&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">72</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        parent<span class="token operator">:</span> <span class="token string">&quot;.circle4&quot;</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">55</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#AD5CFF&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+        strokeDasharray<span class="token operator">:</span> <span class="token number">15</span><span class="token punctuation">,</span>
+        strokeLinecap<span class="token operator">:</span> <span class="token string">&quot;square&quot;</span><span class="token punctuation">,</span>
+        angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">360</span><span class="token punctuation">]</span><span class="token punctuation">,</span> easing<span class="token operator">:</span> <span class="token string">&quot;cubic.out&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        repeat<span class="token operator">:</span> <span class="token number">1000000</span><span class="token punctuation">,</span>
+        easing<span class="token operator">:</span> <span class="token string">&quot;cubic.out&quot;</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">80000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        parent<span class="token operator">:</span> <span class="token string">&quot;.circle5&quot;</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">45</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#FF8400&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        easing<span class="token operator">:</span> <span class="token string">&quot;cubic.in&quot;</span><span class="token punctuation">,</span>
+        isShowEnd<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// wrap shape in stagger</span>
+      <span class="token keyword">const</span> Shapes <span class="token operator">=</span> mojs<span class="token punctuation">.</span><span class="token function">stagger</span><span class="token punctuation">(</span>mojs<span class="token punctuation">.</span>Shape<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// now you can have staggered syntax on the shape and create multiple shapes at once. the next code will produce 5 shapes</span>
+      <span class="token keyword">const</span> shapes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Shapes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">// quantifier defines number of modules to create</span>
+        quantifier<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">38</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">25</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#FF8400&quot;</span><span class="token punctuation">,</span>
+        fillOpacity<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.3</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.4</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.5</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> easing<span class="token operator">:</span> <span class="token string">&quot;cubic.in&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        easing<span class="token operator">:</span> <span class="token string">&quot;cubic.in&quot;</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        radius<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">38</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">30</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">25</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">18</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        fillOpacity<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0.2</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.3</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.4</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.5</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">//</span>
+      <span class="token keyword">const</span> tween <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Tween</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        duration<span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Timeline</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        repeat<span class="token operator">:</span> <span class="token number">10000000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>shapes<span class="token punctuation">,</span> tween<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//   document.body.addEventListener(&quot;mouseenter&quot;, function () {</span>
+      timeline<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//   });</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br></div></div><p>效果：<br> <img src="/newVueprssBlog/assets/img/caseeffect.45c0e872.gif" alt=""></p> <p>在这个案例中，使用<code>CustomShape</code>创建一个新的形状, <code>stagger</code>模块使用可以使用创建多个一样<code>shape</code>的属性的且每个形状都可以编辑形状、颜色，大小等属性。，可以通过数数组编辑对应的顺序的形状。如下所示：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>  <span class="token keyword">const</span> Shapes <span class="token operator">=</span> mojs<span class="token punctuation">.</span><span class="token function">stagger</span><span class="token punctuation">(</span>mojs<span class="token punctuation">.</span>Shape<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// now you can have staggered syntax on the shape and create multiple shapes at once. the next code will produce 5 shapes</span>
+      <span class="token keyword">const</span> shapes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Shapes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">// quantifier defines number of modules to create</span>
+        quantifier<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">230</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">38</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">25</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#FF8400&quot;</span><span class="token punctuation">,</span>
+        fillOpacity<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.2</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.3</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.4</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">0.5</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0.1</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> easing<span class="token operator">:</span> <span class="token string">&quot;cubic.in&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        easing<span class="token operator">:</span> <span class="token string">&quot;cubic.in&quot;</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        radius<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">38</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">30</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">25</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">18</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        fillOpacity<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token number">0.2</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.3</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.4</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">0.5</span><span class="token operator">:</span> <span class="token number">0.1</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>如果需要一个完成的动画（包括then）重复,使用<code>repeat</code>属性不能有想要的效果。那么，就要使用<code>mojs.tween()</code>,时间线<code>mojs.Timeline()</code>两个模块。<code>Timeline</code>不能设置形状的创建从0 到有的时间，所所以使用<code>tween</code>来创建时间,<code>Timeline</code>添加<code>tween</code>.如下所示：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>      <span class="token keyword">const</span> tween <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Tween</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        duration<span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Timeline</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        repeat<span class="token operator">:</span> <span class="token number">10000000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>shapes<span class="token punctuation">,</span> tween<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//   document.body.addEventListener(&quot;mouseenter&quot;, function () {</span>
+      timeline<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//   });</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="案例2"><a href="#案例2" class="header-anchor">#</a> 案例2</h2> <p>创建一个轮盘正方向旋转，中间有四个放大缩小的圆。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+    html<span class="token punctuation">,</span>
+    body <span class="token punctuation">{</span>
+      <span class="token comment">/* background-color: black; */</span>
+    <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs/latest/mo.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token comment">//创建圆形高斯模糊</span>
+    <span class="token keyword">class</span> <span class="token class-name">Vague</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+      <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;defs&gt;
+          &lt;radialGradient id=&quot;grad1&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot; fx=&quot;50%&quot; fy=&quot;50%&quot;&gt;
+            &lt;stop offset=&quot;10%&quot; style=&quot;stop-color:rgb(246,241,93);stop-opacity:0.4&quot; /&gt;
+            &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(246,241,93);stop-opacity:0.8&quot; /&gt;
+          &lt;/radialGradient&gt;
+        &lt;/defs&gt;
+       &lt;ellipse cx=&quot;50&quot; cy=&quot;50&quot; rx=&quot;50&quot; ry=&quot;50&quot; fill=&quot;url(#grad1)&quot;/&gt;   </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;vague&quot;</span><span class="token punctuation">,</span> Vague<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> circle1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+      width<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+      height<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+      radius<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+      fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      stroke<span class="token operator">:</span> <span class="token string">&quot;#F6F15D&quot;</span><span class="token punctuation">,</span>
+      strokeWidth<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> circle2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+      width<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+      height<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+      radius<span class="token operator">:</span> <span class="token number">88</span><span class="token punctuation">,</span>
+      fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      stroke<span class="token operator">:</span> <span class="token string">&quot;#F6F15D&quot;</span><span class="token punctuation">,</span>
+      strokeWidth<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      strokeLinecap<span class="token operator">:</span> <span class="token string">&quot;square&quot;</span><span class="token punctuation">,</span>
+      strokeDasharray<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+      angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">360</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      duration<span class="token operator">:</span> <span class="token number">20000</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> circle3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      shape<span class="token operator">:</span> <span class="token string">&quot;vague&quot;</span><span class="token punctuation">,</span>
+      width<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+      height<span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+      radius<span class="token operator">:</span> <span class="token number">75</span><span class="token punctuation">,</span>
+      duration<span class="token operator">:</span> <span class="token number">20000</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> burst1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Burst</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      width<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+      height<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+      count<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      radius<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      children<span class="token operator">:</span> <span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        isYoyo<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#F6C25D&quot;</span><span class="token punctuation">,</span>
+        repeat<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Timeline</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      repeat<span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>circle1<span class="token punctuation">,</span> circle2<span class="token punctuation">,</span> circle3<span class="token punctuation">,</span> burst1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    timeline<span class="token punctuation">.</span><span class="token function">replay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br></div></div><p>效果：<br> <img src="/newVueprssBlog/assets/img/caseeffect1.43282d87.gif" alt=""></p> <h2 id="案例3"><a href="#案例3" class="header-anchor">#</a> 案例3</h2> <p>类似于雷达扫描</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>类似与雷达扫描<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+      html<span class="token punctuation">,</span>
+      body <span class="token punctuation">{</span>
+        background<span class="token operator">-</span>color<span class="token operator">:</span> #<span class="token number">05173</span>d<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs/latest/mo.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+      <span class="token comment">//创建扇形渐变透明</span>
+      <span class="token keyword">class</span> <span class="token class-name">Sector</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+               &lt;defs&gt;
+                   &lt;linearGradient id=&quot;grad1&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;100%&quot; y2=&quot;0%&quot;&gt;
+                   &lt;stop offset=&quot;0%&quot; style=&quot;stop-color:rgb(2,193,209);stop-opacity:0.4&quot; /&gt;
+                   &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(2,193,209);stop-opacity:1&quot; /&gt;
+                   &lt;/linearGradient&gt;
+
+                   &lt;linearGradient id=&quot;grad2&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;100%&quot; y2=&quot;0%&quot;&gt;
+                   &lt;stop offset=&quot;0%&quot; style=&quot;stop-color:rgb(2,193,209);stop-opacity:0.1&quot; /&gt;
+                   &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(2,193,209);stop-opacity:0.4&quot; /&gt;
+                   &lt;/linearGradient&gt;
+               &lt;/defs&gt;
+               &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;90&quot; stroke-width=&quot;1&quot;  /&gt;
+               &lt;path d=&quot;M50 50 L5 129  V-29Z&quot; fill=&quot;url(#grad1)&quot;/&gt;
+               &lt;path d=&quot;M5 129 Q-90 57 5 -29&quot;  fill=&quot;url(#grad2)&quot;/&gt;
+              
+                </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;sector&quot;</span><span class="token punctuation">,</span> Sector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> circle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shpae<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#13A1D0&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> sector <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;sector&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        isForce3d<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+        angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">360</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">//创建多个圆形的</span>
+      <span class="token keyword">let</span> circles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        circles<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>
+          <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            parent<span class="token operator">:</span> circle<span class="token punctuation">.</span>el<span class="token punctuation">,</span>
+            shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+            width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+            height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+            radius<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+            fill<span class="token operator">:</span> <span class="token string">&quot;#06CC60&quot;</span><span class="token punctuation">,</span>
+            left<span class="token operator">:</span> <span class="token string">&quot;rand(18%,70%)&quot;</span><span class="token punctuation">,</span>
+            top<span class="token operator">:</span> <span class="token string">&quot;rand(18%,70%)&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">let</span> tween <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Tween</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        duration<span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Timeline</span><span class="token punctuation">(</span><span class="token punctuation">{</span> repeat<span class="token operator">:</span> <span class="token number">1000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>circle<span class="token punctuation">,</span> sector<span class="token punctuation">,</span> tween<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      circles<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br></div></div><p>效果：<br> <img src="/newVueprssBlog/assets/img/caseeffect2.d00918ad.gif" alt=""></p> <h2 id="案例4"><a href="#案例4" class="header-anchor">#</a> 案例4</h2> <p>使用mojs的播放器，渲染出svg路径动画</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code> <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>svg
+     <span class="token operator">&gt;</span>
+     <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>路径  path<span class="token operator">--</span><span class="token operator">&gt;</span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>svg<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs/latest/mo.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+   <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+   <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+     <span class="token comment">//做路径动画之前，我们先要收集路径下的信息</span>
+     <span class="token keyword">let</span> whiteColor <span class="token operator">=</span> <span class="token string">&quot;white&quot;</span><span class="token punctuation">;</span>
+     <span class="token keyword">let</span> path <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">&quot;path&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">let</span> fillData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+     <span class="token keyword">let</span> strokeColorData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+     <span class="token keyword">let</span> strokeWidthData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+     Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+       <span class="token comment">//获取所有的路径path,在路径path获取到填充色</span>
+       <span class="token keyword">let</span> fillColor <span class="token operator">=</span> item<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">&quot;fill&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fillColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//把颜色push在一个数组里面</span>
+       fillData<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+         fill<span class="token operator">:</span> fillColor <span class="token operator">||</span> whiteColor<span class="token punctuation">,</span>
+       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fillData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//用来判断</span>
+       strokeWidthData<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fillColor <span class="token operator">?</span> <span class="token number">0.5</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       strokeColorData<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fillColor <span class="token operator">||</span> whiteColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token keyword">const</span> HtmlStagger <span class="token operator">=</span> mojs<span class="token punctuation">.</span><span class="token function">stagger</span><span class="token punctuation">(</span>mojs<span class="token punctuation">.</span>Html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">let</span> avocado <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HtmlStagger</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+       el<span class="token operator">:</span> path<span class="token punctuation">,</span>
+       fillData<span class="token punctuation">,</span>
+       stroke<span class="token operator">:</span> strokeColorData<span class="token punctuation">,</span> <span class="token comment">//显示线是粗度</span>
+       strokeWidth<span class="token operator">:</span> strokeWidthData<span class="token punctuation">,</span> <span class="token comment">//显示线是宽度</span>
+       strokeDasharray<span class="token operator">:</span> <span class="token string">&quot;3000&quot;</span><span class="token punctuation">,</span>
+       strokeDashoffset<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">3000</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+       duration<span class="token operator">:</span> <span class="token number">38000</span><span class="token punctuation">,</span>
+       delay<span class="token operator">:</span> <span class="token string">&quot;stagger(100)&quot;</span><span class="token punctuation">,</span>
+       opacity<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     avocado<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment">//动画播放器</span>
+     <span class="token keyword">new</span> <span class="token class-name">MojsPlayer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+       add<span class="token operator">:</span> avocado<span class="token punctuation">,</span>
+       isRepeat<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+       isPlaying<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+       isSaveState<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div><p>效果：<br> <img src="/newVueprssBlog/assets/img/playerone.1cf8f9d7.gif" alt=""></p> <h2 id="案例5"><a href="#案例5" class="header-anchor">#</a> 案例5</h2> <p>这个案例时显示图和使用外部svg。目前，好像没有方法同时引入外部svg,只用通过创建形状使用。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>案例<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+      body<span class="token punctuation">,</span>
+      html <span class="token punctuation">{</span>
+        background<span class="token operator">-</span>color<span class="token operator">:</span> black<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token punctuation">.</span>st0 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_1_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st1 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_2_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st2 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_3_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st3 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_4_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st4 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_5_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st5 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_6_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st6 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_7_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st7 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_8_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st8 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_9_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st9 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_10_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st10 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_11_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st11 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_12_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st12 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_13_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st13 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_14_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st14 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_15_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st15 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_16_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st16 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_17_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st17 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_18_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st18 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_19_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st19 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_20_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st20 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_21_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st21 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_22_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st22 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_23_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st23 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_24_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st24 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_25_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st25 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_26_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st26 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_27_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st27 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_28_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st28 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_29_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st29 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_30_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st30 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_31_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st31 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_32_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st32 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_33_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st33 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_34_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st34 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span>#<span class="token constant">SVGID_35_</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">.</span>st35 <span class="token punctuation">{</span>
+        fill<span class="token operator">:</span> none<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs/latest/mo.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+      <span class="token comment">//创建字母</span>
+      <span class="token keyword">class</span> <span class="token class-name">Mletter</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+                   &lt;path d=&quot;M 20 0 L 0 20 L 10 50 L 0 80 L 20 100 L 35 50 Z&quot; class=&quot;left&quot;&gt;&lt;/path&gt;
+                   &lt;path d=&quot;M 80 0 L 100 20 L 90 50 L 100 80 L 80 100 L 65 50 Z&quot; class=&quot;right&quot;&gt;&lt;/path&gt;
+                   &lt;path d=&quot;M 0 20 L 20 0 L 50 10 L 80 0 L 100 20 L 50 35 Z&quot; class=&quot;top&quot;&gt;&lt;/path&gt;
+                </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token number">300</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//</span>
+      <span class="token keyword">class</span> <span class="token class-name">Error</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;g&gt;
+	&lt;g&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;134.8&quot; x2=&quot;88.65&quot; y1=&quot;-15&quot; x1=&quot;88.65&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_1_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;rect height=&quot;149.8&quot; width=&quot;33.9&quot; class=&quot;st0&quot; y=&quot;61.2&quot; x=&quot;71.7&quot;&gt;&lt;/rect&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;167.4&quot; x2=&quot;122.55&quot; y1=&quot;-2&quot; x1=&quot;122.55&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_2_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;rect height=&quot;169.4&quot; width=&quot;33.9&quot; class=&quot;st1&quot; y=&quot;28.6&quot; x=&quot;105.6&quot;&gt;&lt;/rect&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;133.6&quot; x2=&quot;348.9&quot; y1=&quot;17.6&quot; x1=&quot;348.9&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_3_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;rect height=&quot;116&quot; width=&quot;33.4&quot; class=&quot;st2&quot; y=&quot;62.4&quot; x=&quot;332.2&quot;&gt;&lt;/rect&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;153&quot; x2=&quot;382.3&quot; y1=&quot;17.6&quot; x1=&quot;382.3&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_4_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;rect height=&quot;135.4&quot; width=&quot;33.4&quot; class=&quot;st3&quot; y=&quot;43&quot; x=&quot;365.6&quot;&gt;&lt;/rect&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;115.6&quot; x2=&quot;415.9&quot; y1=&quot;7.4&quot; x1=&quot;415.9&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_5_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;rect height=&quot;108.2&quot; width=&quot;33.4&quot; class=&quot;st4&quot; y=&quot;80.4&quot; x=&quot;399.2&quot;&gt;&lt;/rect&gt;
+	&lt;/g&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;-31.4&quot; x2=&quot;240&quot; y1=&quot;-255.4&quot; x1=&quot;240&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_6_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0.2&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#DEFFFD&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;ellipse ry=&quot;112&quot; rx=&quot;240&quot; cy=&quot;339.4&quot; cx=&quot;240&quot; class=&quot;st5&quot;&gt;&lt;/ellipse&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;-111&quot; x2=&quot;40.3&quot; y1=&quot;-168.6&quot; x1=&quot;40.3&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_7_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#F0FFFA&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#72C2BA;stop-opacity:0.3&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;polygon points=&quot;40.3,307 20,342.2 37.3,342.2 37.3,364.6 43.2,364.6 43.2,342.2 60.6,342.2&quot; class=&quot;st6&quot;&gt;&lt;/polygon&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;-66.2&quot; x2=&quot;71.45&quot; y1=&quot;-107.8&quot; x1=&quot;71.45&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_8_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#F0FFFA&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#BDEFE3&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;polygon points=&quot;71.4,262.2 56.8,287.6 69.3,287.6 69.3,303.8 73.6,303.8 73.6,287.6 86.1,287.6&quot; class=&quot;st7&quot;&gt;&lt;/polygon&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;-69.9129&quot; x2=&quot;287.3816&quot; y1=&quot;-184.0863&quot; x1=&quot;307.5132&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_9_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#BDEFE3&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;polygon points=&quot;153.8,289.5 226.2,371.4 441.1,356.5 242.4,289.1&quot; class=&quot;st8&quot;&gt;&lt;/polygon&gt;
+	&lt;g&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;7.4&quot; x2=&quot;403.0329&quot; y1=&quot;-47.7736&quot; x1=&quot;403.0329&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_10_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M430.1,234.7c-5.9-22.4-5-46.1-25.8-46.1c-14.4,0-27.4,45.9-28.5,50.2C374.9,243.3,433.9,248.9,430.1,234.7z&quot; class=&quot;st9&quot;&gt;&lt;/path&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;29.8&quot; x2=&quot;366.1195&quot; y1=&quot;-50.9524&quot; x1=&quot;366.1195&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_11_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M405.6,233.6c-8.8-32.6-7.2-67.4-37.6-67.4c-21.1,0-40,67.2-41.6,73.6S411.2,254.5,405.6,233.6z&quot; class=&quot;st10&quot;&gt;&lt;/path&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;2.3895&quot; x2=&quot;59.6986&quot; y1=&quot;-60.6&quot; x1=&quot;59.6986&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_12_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M90.4,246.2c-6.7-25.4-13.1-49.9-29.3-52.5S30.1,246,28.8,251C27.5,256,94.9,262.5,90.4,246.2z&quot; class=&quot;st11&quot;&gt;&lt;/path&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;11.6829&quot; x2=&quot;38.1626&quot; y1=&quot;-33.3587&quot; x1=&quot;38.1626&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_13_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M60.2,221.9c-4.8-18.2-9.3-35.7-21-37.6C27.5,182.4,17,221.9,16,225.4C15.2,228.9,63.2,233.6,60.2,221.9z&quot; class=&quot;st12&quot;&gt;&lt;/path&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;20.3058&quot; x2=&quot;100.5195&quot; y1=&quot;-60.5524&quot; x1=&quot;100.5195&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_14_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#FFFFFF;stop-opacity:0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M140,243.2c-8.8-32.6-16.8-64.2-37.6-67.4s-40,67.2-41.6,73.6C59.2,255.8,145.6,264.1,140,243.2z&quot; class=&quot;st13&quot;&gt;&lt;/path&gt;
+	&lt;/g&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 -1 0 196)&quot; y2=&quot;-103&quot; x2=&quot;431.0076&quot; y1=&quot;-154.2&quot; x1=&quot;431.0076&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_15_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#F0FFFA&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#72C2BA;stop-opacity:0.3&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M453.9,314.8c-0.5-3.7-5.3-4.5-9.8-8.8c-4.5-4.5-5.9-7-11.5-7c-10.6,0-10.6,9.8-13.3,9.8
+		c-8.3,0-11.5,9.8-11.5,12.3s3.5,5.3,8.8,8.8c3.5,2.4,9.1,2.4,12.3,2.1v18.2h4.5v-18.4c2.4-0.3,3.7-2.2,11.5,0.8
+		C449.4,334.4,455.7,327.3,453.9,314.8z&quot; class=&quot;st14&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(0.7012 0.713 0.713 -0.7012 -683.8461 861.7198)&quot; y2=&quot;1169.7305&quot; x2=&quot;19.2266&quot; y1=&quot;1158.9734&quot; x1=&quot;19.2266&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_16_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M164,70.8c0,0-11.4-12.6-10.1-20.6c1.3-8,8.8,5.4,10.2,10.4C165.8,66.8,164,70.8,164,70.8z&quot; class=&quot;st15&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(0.9394 0.3429 0.3429 -0.9394 -221.2311 534.2348)&quot; y2=&quot;613.0653&quot; x2=&quot;228.6433&quot; y1=&quot;598.7776&quot; x1=&quot;228.6433&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_17_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M213,55.3c0,0-20.8-8.6-23.8-18.9c-3-10.2,13.8,1.4,18.1,6.6C212.8,49.6,213,55.3,213,55.3z&quot; class=&quot;st16&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(0.9394 0.3429 0.3429 -0.9394 -221.2311 534.2348)&quot; y2=&quot;621.0851&quot; x2=&quot;290.0884&quot; y1=&quot;613.6268&quot; x1=&quot;290.0884&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_18_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M269.1,60c0,0-10.9-4.5-12.5-9.9s7.2,0.8,9.4,3.5C269,56.9,269.1,60,269.1,60z&quot; class=&quot;st17&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(0.9825 -0.1864 -0.1864 -0.9825 73.1605 -6.7168)&quot; y2=&quot;-112.1284&quot; x2=&quot;114.5024&quot; y1=&quot;-121.9685&quot; x1=&quot;114.5024&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_19_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M218.6,89.9c0,0-15.4,2.1-20.8-2.9c-5.4-5,8.6-4,13-2.4C216.5,86.5,218.6,89.9,218.6,89.9z&quot; class=&quot;st18&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(0.9514 0.3079 0.3079 -0.9514 -183.4358 487.0605)&quot; y2=&quot;508.8987&quot; x2=&quot;317.3436&quot; y1=&quot;492.2589&quot; x1=&quot;317.3436&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_20_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#F0FFFA&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#72C2BA;stop-opacity:0.3&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M286.7,121.9c0,0-24.5-9.3-28.5-21c-4-11.8,16,1.1,21.3,6.9C286.4,115.2,286.7,121.9,286.7,121.9z&quot; class=&quot;st19&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 1 0 -286)&quot; y2=&quot;441.8038&quot; x2=&quot;28.7&quot; y1=&quot;429.3238&quot; x1=&quot;28.7&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_21_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M29.3,148.8c0,0-8.6-3.7-16.3-1.3c0,0,14.2,2.7,15.7,8.3c0,0,9.4-9.8,15.7-12.5
+		C44.3,143.3,33.4,146.7,29.3,148.8z&quot; class=&quot;st20&quot;&gt;&lt;/path&gt;
+	
+		&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 1 0 -286)&quot; y2=&quot;413.3704&quot; x2=&quot;40.3&quot; y1=&quot;404.0904&quot; x1=&quot;40.3&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_22_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;path d=&quot;M40.8,122c0,0-6.4-2.7-12.2-1c0,0,10.6,1.9,11.7,6.2c0,0,7-7.4,11.7-9.3C51.8,118,43.8,120.6,40.8,122z&quot; class=&quot;st21&quot;&gt;&lt;/path&gt;
+	&lt;g&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 1 0 -286)&quot; y2=&quot;545.6511&quot; x2=&quot;362.3732&quot; y1=&quot;583.2333&quot; x1=&quot;362.3732&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_23_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#E9FFFD&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#63D0B5&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M365.3,293.9c-4.5-16.3-7.7-23.2-15.5-34.2c0,0,26.4,26.9,25.1,34.2C373.6,301.4,365.3,293.9,365.3,293.9z&quot; class=&quot;st22&quot;&gt;&lt;/path&gt;
+		
+			&lt;linearGradient gradientTransform=&quot;matrix(1 0 0 1 0 -286)&quot; y2=&quot;550.8524&quot; x2=&quot;376.5371&quot; y1=&quot;586.9574&quot; x1=&quot;376.5371&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_24_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#E9FFFD&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#63D0B5&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M369.8,293.9c0,0,6.7-26.4,13.8-29.1c0,0-10.2,30.9-8.6,34.2C376.5,302.5,367.7,301.6,369.8,293.9z&quot; class=&quot;st23&quot;&gt;&lt;/path&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;linearGradient y2=&quot;176.8723&quot; x2=&quot;140.0437&quot; y1=&quot;289.0781&quot; x1=&quot;140.0437&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_25_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M181,260h-13.3v29.1h-20.8V260H99.1v-15.2l41.8-67.9h26.7V243H181V260z M146.9,243v-22.9
+			c0-6.5,0.6-16.7,0.9-23.2h-0.6c-2.7,5.9-5.8,12.1-8.9,18.2L120.8,243H146.9z&quot; class=&quot;st24&quot;&gt;&lt;/path&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;linearGradient y2=&quot;176.8723&quot; x2=&quot;324.5643&quot; y1=&quot;289.0781&quot; x1=&quot;324.5643&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_26_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M365.5,260h-13.3v29.1h-20.8V260h-47.8v-15.2l41.9-67.9h26.7V243h13.3V260z M331.4,243v-22.9
+			c0-6.5,0.6-16.7,0.9-23.2h-0.6c-2.7,5.9-5.8,12.1-8.9,18.2L305.3,243H331.4z&quot; class=&quot;st25&quot;&gt;&lt;/path&gt;
+	&lt;/g&gt;
+	&lt;g&gt;
+		&lt;linearGradient y2=&quot;192.9397&quot; x2=&quot;211.678&quot; y1=&quot;279.1109&quot; x1=&quot;211.678&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_27_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M232.8,193c-23.3,0.4-42.1,19.3-42.3,42.6C199.8,217.6,215.8,201.1,232.8,193z&quot; class=&quot;st26&quot;&gt;&lt;/path&gt;
+		&lt;g&gt;
+			&lt;linearGradient y2=&quot;192.9397&quot; x2=&quot;229.5953&quot; y1=&quot;279.1109&quot; x1=&quot;229.5953&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_28_&quot;&gt;
+				&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+				&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+			&lt;/linearGradient&gt;
+			&lt;path d=&quot;M249.4,195.9c-2.4,0.6-5.1,1.5-7.9,2.5c-21,7.6-41.3,30.1-48.3,52.5c2.1,5.8,5.4,10.9,9.7,15.2
+				c6.5-2.6,16.9-8.2,33.2-19.6c12.7-8.9,25.7-26.6,30-38.9C261.5,202.5,255.8,198.5,249.4,195.9z&quot; class=&quot;st27&quot;&gt;&lt;/path&gt;
+			&lt;linearGradient y2=&quot;192.9397&quot; x2=&quot;243.4067&quot; y1=&quot;279.111&quot; x1=&quot;243.4067&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_29_&quot;&gt;
+				&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+				&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+			&lt;/linearGradient&gt;
+			&lt;path d=&quot;M271.8,216c-6.8,14.5-20.5,30.1-30.9,37.4c-12.5,8.8-22.6,14.9-30.7,18.7c6.8,4.4,14.8,7,23.5,7
+				c23.8,0,43.1-19.3,43.1-43.1C276.7,228.8,274.9,222,271.8,216z&quot; class=&quot;st28&quot;&gt;&lt;/path&gt;
+			&lt;linearGradient y2=&quot;256.0879&quot; x2=&quot;275.9313&quot; y1=&quot;256.0879&quot; x1=&quot;182.4489&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_30_&quot;&gt;
+				&lt;stop style=&quot;stop-color:#E7F9F6&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+				&lt;stop style=&quot;stop-color:#77D6BF&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+			&lt;/linearGradient&gt;
+			&lt;path d=&quot;M202.8,266.2c-7.1,2.8-9.7,2.2-10.6,1.6c-1.1-0.7-1.9-3.5-0.8-9.5c0.4-2.4,1-4.9,1.8-7.4
+				c-1.7-4.6-2.7-9.7-2.7-14.9c0-0.2,0-0.3,0-0.5c-3.6,7-6.2,14.2-7.4,21.3c-0.6,3.4-2.4,13.6,4.6,18c1.8,1.2,4,1.8,6.7,1.8
+				c4.1,0,9.3-1.5,15.8-4.5C207.5,270.4,205,268.4,202.8,266.2z&quot; class=&quot;st29&quot;&gt;&lt;/path&gt;
+			&lt;linearGradient y2=&quot;200.9766&quot; x2=&quot;275.9313&quot; y1=&quot;200.9766&quot; x1=&quot;182.4489&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_31_&quot;&gt;
+				&lt;stop style=&quot;stop-color:#E7F9F6&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+				&lt;stop style=&quot;stop-color:#77D6BF&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+			&lt;/linearGradient&gt;
+			&lt;path d=&quot;M249.4,195.9c4.2-1.1,7.7-1.7,10.6-1.7c3.6,0,6,0.9,6.9,2.7c1.2,2.3,0.8,6.1-0.8,10.7
+				c2.2,2.5,4.2,5.4,5.7,8.4c4-8.7,5.6-17,2.5-22.9c-4.5-8.6-16.5-9.5-35.7-2.6c-1.9,0.7-3.9,1.5-5.8,2.4c0.3,0,0.5,0,0.8,0
+				C239.2,192.9,244.5,194,249.4,195.9z&quot; class=&quot;st30&quot;&gt;&lt;/path&gt;
+			&lt;linearGradient y2=&quot;239.9093&quot; x2=&quot;275.9313&quot; y1=&quot;239.9093&quot; x1=&quot;182.4489&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_32_&quot;&gt;
+				&lt;stop style=&quot;stop-color:#E7F9F6&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+				&lt;stop style=&quot;stop-color:#77D6BF&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+			&lt;/linearGradient&gt;
+			&lt;path d=&quot;M271.8,216c-1.6-3-3.5-5.8-5.7-8.4c-4.3,12.3-17.3,30-30,38.9c-16.3,11.4-26.7,17-33.2,19.6
+				c2.2,2.2,4.7,4.3,7.3,6c8.1-3.8,18.2-9.9,30.7-18.7C251.3,246.1,265,230.6,271.8,216z&quot; class=&quot;st31&quot;&gt;&lt;/path&gt;
+		&lt;/g&gt;
+		&lt;linearGradient y2=&quot;192.9397&quot; x2=&quot;219.9394&quot; y1=&quot;279.1109&quot; x1=&quot;219.9394&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_33_&quot;&gt;
+			&lt;stop style=&quot;stop-color:#58CCB0&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+			&lt;stop style=&quot;stop-color:#E5F9F4&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+		&lt;/linearGradient&gt;
+		&lt;path d=&quot;M193.2,250.9c7-22.4,27.3-44.9,48.3-52.5c2.8-1,5.5-1.8,7.9-2.5c-4.9-1.9-10.2-3-15.8-3c-0.3,0-0.5,0-0.8,0
+			c-17.1,8.2-33,24.6-42.3,42.6c0,0.2,0,0.3,0,0.5C190.5,241.3,191.5,246.3,193.2,250.9z&quot; class=&quot;st32&quot;&gt;&lt;/path&gt;
+	&lt;/g&gt;
+	&lt;linearGradient y2=&quot;208.0583&quot; x2=&quot;256.1299&quot; y1=&quot;208.0583&quot; x1=&quot;242.4&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_34_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#FFFFFF&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#CFF4EE&quot; offset=&quot;1&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;circle r=&quot;6.9&quot; cy=&quot;208.1&quot; cx=&quot;249.3&quot; class=&quot;st33&quot;&gt;&lt;/circle&gt;
+	&lt;linearGradient y2=&quot;252.1956&quot; x2=&quot;211.3202&quot; y1=&quot;235.0141&quot; x1=&quot;211.3202&quot; gradientUnits=&quot;userSpaceOnUse&quot; id=&quot;SVGID_35_&quot;&gt;
+		&lt;stop style=&quot;stop-color:#E9FFFD&quot; offset=&quot;0&quot;&gt;&lt;/stop&gt;
+		&lt;stop style=&quot;stop-color:#63D0B5&quot; offset=&quot;0.9851&quot;&gt;&lt;/stop&gt;
+	&lt;/linearGradient&gt;
+	&lt;circle r=&quot;8.6&quot; cy=&quot;243.6&quot; cx=&quot;211.3&quot; class=&quot;st34&quot;&gt;&lt;/circle&gt;
+	&lt;path d=&quot;M266.8,193.9c-0.9-1.8-3.3-2.7-6.9-2.7c-2.8,0-6.4,0.6-10.6,1.7c6.5,2.5,12.2,6.6,16.7,11.7
+		C267.6,200.1,268,196.3,266.8,193.9z&quot; class=&quot;st35&quot;&gt;&lt;/path&gt;
+	&lt;path d=&quot;M191.3,255.2c-1,5.9-0.2,8.8,0.8,9.5c0.9,0.6,3.5,1.2,10.6-1.6c-4.2-4.3-7.5-9.5-9.7-15.2
+		C192.4,250.3,191.8,252.8,191.3,255.2z&quot; class=&quot;st35&quot;&gt;&lt;/path&gt;
+&lt;/g&gt;
+            
+            
+            
+            </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;mletter&quot;</span><span class="token punctuation">,</span> Mletter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">,</span> Error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//字母M</span>
+      <span class="token keyword">let</span> mletter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;mletter&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        left<span class="token operator">:</span> <span class="token string">&quot;40%&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#fff&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#fff&quot;</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">0.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        y<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string">&quot;rand(-100%, -200%)&quot;</span><span class="token operator">:</span> <span class="token number">110</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">120</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token number">720</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        y<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0.5</span><span class="token operator">:</span> <span class="token number">0.9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#B2E9DC&quot;</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#B2E9DC&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//字母O</span>
+      <span class="token keyword">let</span> oletter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#fff&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        left<span class="token operator">:</span> <span class="token string">&quot;48%&quot;</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">0.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        x<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token string">&quot;rand(-100%, -200%)&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        delay<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        x<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0.5</span><span class="token operator">:</span> <span class="token number">0.9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#B2E9DC&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> error <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;error&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">1500</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">750</span><span class="token punctuation">,</span>
+        left<span class="token operator">:</span> <span class="token string">&quot;50%&quot;</span><span class="token punctuation">,</span>
+        top<span class="token operator">:</span> <span class="token string">&quot;40%&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#fff&quot;</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">0.9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">720</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Timeline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mletter<span class="token punctuation">,</span> oletter<span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//   curvel.play();</span>
+      <span class="token comment">//   mletter.play();</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br><span class="line-number">402</span><br><span class="line-number">403</span><br><span class="line-number">404</span><br><span class="line-number">405</span><br><span class="line-number">406</span><br><span class="line-number">407</span><br><span class="line-number">408</span><br><span class="line-number">409</span><br><span class="line-number">410</span><br><span class="line-number">411</span><br><span class="line-number">412</span><br><span class="line-number">413</span><br><span class="line-number">414</span><br><span class="line-number">415</span><br><span class="line-number">416</span><br><span class="line-number">417</span><br><span class="line-number">418</span><br><span class="line-number">419</span><br><span class="line-number">420</span><br><span class="line-number">421</span><br><span class="line-number">422</span><br><span class="line-number">423</span><br><span class="line-number">424</span><br><span class="line-number">425</span><br><span class="line-number">426</span><br><span class="line-number">427</span><br><span class="line-number">428</span><br><span class="line-number">429</span><br><span class="line-number">430</span><br><span class="line-number">431</span><br><span class="line-number">432</span><br><span class="line-number">433</span><br><span class="line-number">434</span><br><span class="line-number">435</span><br><span class="line-number">436</span><br><span class="line-number">437</span><br><span class="line-number">438</span><br><span class="line-number">439</span><br><span class="line-number">440</span><br><span class="line-number">441</span><br><span class="line-number">442</span><br></div></div><p>效果：<br> <img src="/newVueprssBlog/assets/img/caseeffect3.622210c5.gif" alt=""></p> <h2 id="案例6"><a href="#案例6" class="header-anchor">#</a> 案例6</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token operator">&lt;</span>html<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>head<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>动图<span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+      body<span class="token punctuation">,</span>
+      html <span class="token punctuation">{</span>
+        background<span class="token operator">-</span>color<span class="token operator">:</span> black<span class="token punctuation">;</span>
+        position<span class="token operator">:</span> relative<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      #js<span class="token operator">-</span>el <span class="token punctuation">{</span>
+        position<span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+        right<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        bottom<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        left<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        top<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        width<span class="token operator">:</span> <span class="token number">95</span>px<span class="token punctuation">;</span>
+        height<span class="token operator">:</span> <span class="token number">94</span>px<span class="token punctuation">;</span>
+        margin<span class="token operator">:</span> auto<span class="token punctuation">;</span>
+        border<span class="token operator">-</span>radius<span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+        background<span class="token operator">:</span> <span class="token operator">-</span>webkit<span class="token operator">-</span>radial<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>
+          circle at <span class="token number">50</span><span class="token operator">%</span> <span class="token operator">-</span><span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0266</span>c4 <span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0</span>dcbee
+        <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Safari 5.1 - 6.0 */</span>
+        background<span class="token operator">:</span> <span class="token operator">-</span>o<span class="token operator">-</span>radial<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>
+          circle at <span class="token number">50</span><span class="token operator">%</span> <span class="token operator">-</span><span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0266</span>c4 <span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0</span>dcbee
+        <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Opera 11.1 - 12.0 */</span>
+        background<span class="token operator">:</span> <span class="token operator">-</span>moz<span class="token operator">-</span>radial<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>
+          circle at <span class="token number">50</span><span class="token operator">%</span> <span class="token operator">-</span><span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0266</span>c4 <span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0</span>dcbee
+        <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* Firefox 3.6 - 15 */</span>
+        background<span class="token operator">:</span> radial<span class="token operator">-</span><span class="token function">gradient</span><span class="token punctuation">(</span>
+          circle at <span class="token number">50</span><span class="token operator">%</span> <span class="token operator">-</span><span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0266</span>c4 <span class="token number">60</span><span class="token operator">%</span><span class="token punctuation">,</span>
+          #<span class="token number">0</span>dcbee
+        <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 标准的语法 */</span>
+      <span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>body<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;js-el&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>img
+        src<span class="token operator">=</span><span class="token string">&quot;./img/svg.png&quot;</span>
+        alt<span class="token operator">=</span><span class="token string">&quot;&quot;</span>
+        style<span class="token operator">=</span><span class="token string">&quot;margin: 0 auto; width: 100%; height: 100%&quot;</span>
+      <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs/latest/mo.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">&quot;http://cdn.jsdelivr.net/mojs-player/latest/mojs-player.min.js&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+      <span class="token comment">//创建水平线性渐变</span>
+      <span class="token keyword">class</span> <span class="token class-name">CircleGradual</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;defs&gt;
+               &lt;linearGradient id=&quot;orange_red&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;100%&quot; y2=&quot;0%&quot;&gt;
+               &lt;stop offset=&quot;0%&quot; style=&quot;stop-color:rgb(34,189,253);
+               stop-opacity:1&quot;/&gt;
+               &lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(23,60,94);
+               stop-opacity:1&quot;/&gt;
+               &lt;/linearGradient&gt;
+            &lt;/defs&gt;
+            &lt;circle  cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;  stroke-dasharray='15,1'stroke-width='12' style=&quot;stroke:url(#orange_red); &quot;/&gt;
+                        </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token number">300</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">//创建圆径向渐变色</span>
+      <span class="token keyword">class</span> <span class="token class-name">Circleone</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;defs&gt;
+                  &lt;radialGradient id=&quot;radia&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;40%&quot; fx=&quot;50%&quot; fy=&quot;50%&quot;&gt;
+                      &lt;stop offset=&quot;0%&quot;  style=&quot;stop-color:rgb(2,39,77);stop-opacity:1 &quot; /&gt;
+                      &lt;stop offset=&quot;1%&quot;  style=&quot;stop-color:rgb(2,39,77); stop-opacity:1&quot;/&gt;
+                  &lt;/radialGradient&gt;
+              &lt;/defs&gt;
+              &lt;circle fill=&quot;url(#radia)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot; /&gt;              </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token number">300</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">//创建一个圆渐变色</span>
+      <span class="token keyword">class</span> <span class="token class-name">Circletwo</span> <span class="token keyword">extends</span> <span class="token class-name">mojs<span class="token punctuation">.</span>CustomShape</span> <span class="token punctuation">{</span>
+        <span class="token function">getShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+            &lt;defs&gt;
+                  &lt;radialGradient id=&quot;radias&quot; cx=&quot;50%&quot; cy=&quot;20%&quot; r=&quot;40%&quot; fx=&quot;50%&quot; fy=&quot;50%&quot;&gt;
+                      &lt;stop offset=&quot;50%&quot;  style=&quot;stop-color:rgb(17,44,221); &quot;/&gt;
+                      &lt;stop offset=&quot;70%&quot;  style=&quot;stop-color:rgb(33,189,254); &quot;/&gt;
+
+                  &lt;/radialGradient&gt;
+              &lt;/defs&gt;
+              &lt;circle fill=&quot;url(#radias)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot; /&gt;              </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">getLength</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token number">300</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;circleone&quot;</span><span class="token punctuation">,</span> Circleone<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;circlegradual&quot;</span><span class="token punctuation">,</span> CircleGradual<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      mojs<span class="token punctuation">.</span><span class="token function">addShape</span><span class="token punctuation">(</span><span class="token string">&quot;circletwo&quot;</span><span class="token punctuation">,</span> Circletwo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> circle1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">97</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#0076EF&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">81</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#0076EF&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle4 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">55</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#0076EF&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        strokeDasharray<span class="token operator">:</span> <span class="token number">1.5</span><span class="token punctuation">,</span>
+        strokeLinecap<span class="token operator">:</span> <span class="token string">&quot;butt&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">360</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        repeat<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">11000</span><span class="token punctuation">,</span>
+        delay<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> circle2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circleone&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span>
+        stroke<span class="token operator">:</span> <span class="token string">&quot;#022951&quot;</span><span class="token punctuation">,</span>
+        strokeWidth<span class="token operator">:</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;#022951&quot;</span><span class="token punctuation">,</span>
+        fillOpacity<span class="token operator">:</span> <span class="token number">0.2</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> circle5 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> html <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Html</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token operator">:</span> <span class="token string">&quot;#js-el&quot;</span><span class="token punctuation">,</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circle&quot;</span><span class="token punctuation">,</span>
+        borderWidth<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">2</span><span class="token operator">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">122</span><span class="token punctuation">,</span>
+        x<span class="token operator">:</span> <span class="token string">&quot;0%&quot;</span><span class="token punctuation">,</span>
+        y<span class="token operator">:</span> <span class="token string">&quot;0%&quot;</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
+        scale<span class="token operator">:</span> <span class="token number">0.78</span><span class="token punctuation">,</span>
+        opacity<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">let</span> circlegradual <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        shape<span class="token operator">:</span> <span class="token string">&quot;circlegradual&quot;</span><span class="token punctuation">,</span>
+        width<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        height<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        fill<span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+        radius<span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
+        angle<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token number">0</span><span class="token operator">:</span> <span class="token number">360</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        repeat<span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+        duration<span class="token operator">:</span> <span class="token number">11000</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">let</span> timeline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mojs<span class="token punctuation">.</span>Timeline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>
+        circlegradual<span class="token punctuation">,</span>
+        circle1<span class="token punctuation">,</span>
+        circle2<span class="token punctuation">,</span>
+        circle3<span class="token punctuation">,</span>
+        circle4<span class="token punctuation">,</span>
+        circle5<span class="token punctuation">,</span>
+        html
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      timeline<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br></div></div><p>效果：<br> <img src="/newVueprssBlog/assets/img/caseeffect4.0d353c95.gif" alt=""></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/newVueprssBlog/assets/js/app.bf8beab7.js" defer></script><script src="/newVueprssBlog/assets/js/2.31544d81.js" defer></script><script src="/newVueprssBlog/assets/js/4.c238cf31.js" defer></script>
+  </body>
+</html>
