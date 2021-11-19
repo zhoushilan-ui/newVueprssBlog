@@ -1,3 +1,13 @@
+---
+title: mojsCase
+date: 2021-11-02 10:10:40
+permalink: /pages/1c6f41/
+categories:
+  - accumulate
+  - mojs
+tags:
+  - 
+---
 ## 案例1
 
 1.使用shape,tween stagger模块创建一个动画

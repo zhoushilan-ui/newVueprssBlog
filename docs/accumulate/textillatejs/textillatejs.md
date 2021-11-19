@@ -1,3 +1,13 @@
+---
+title: textillatejs
+date: 2021-10-12 15:05:04
+permalink: /pages/757624/
+categories:
+  - accumulate
+  - textillatejs
+tags:
+  - 
+---
 # textillatejs 基础知识点
 ## Textillate.js
 `Textillate.js`是用于创建CSS3文本动画的简单插件。该插件结合了不同的库，以帮助将CSS3动画应用于任何文本。要使用它，您需要做的就是将textillate.js及其依赖项添加到您的项目中。`textillate.js`使用jquery.

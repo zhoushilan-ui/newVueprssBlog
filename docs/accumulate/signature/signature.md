@@ -1,3 +1,13 @@
+---
+title: 电子签名
+date: 2021-10-06 11:43:26
+permalink: /pages/04bef1/
+categories:
+  - accumulate
+  - signature
+tags:
+  - 
+---
 # 电子签名
 ## html
 ####  在使用电子签名时，先下载[jSignature.min.js](https://codechina.csdn.net/mirrors/brinley/jSignature/-/blob/master/libs/jSignature.min.js)。

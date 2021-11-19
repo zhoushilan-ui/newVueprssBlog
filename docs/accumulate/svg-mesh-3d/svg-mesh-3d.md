@@ -1,3 +1,13 @@
+---
+title: svg-mesh-3d
+date: 2021-10-11 13:23:46
+permalink: /pages/47eac7/
+categories:
+  - accumulate
+  - svg-mesh-3d
+tags:
+  - 
+---
 # SVG Mesh 3d
 
 ## 什么是SVG Mesh 3d？<br>

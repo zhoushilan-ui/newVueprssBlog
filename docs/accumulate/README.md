@@ -1,3 +1,12 @@
+---
+title: 前端基础知识
+date: 2021-09-29 16:23:48
+permalink: /pages/43b1a2/
+categories:
+  - accumulate
+tags:
+  - 
+---
 # 前端基础知识
 ## [vue(vue3)学习知识点](/accumulate/vue3-knowledge/)
 ## [reveal.js网页版ppt](/accumulate/Webversion/)

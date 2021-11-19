@@ -1,3 +1,13 @@
+---
+title: mojs
+date: 2021-10-11 14:56:09
+permalink: /pages/32c45a/
+categories:
+  - accumulate
+  - mojs
+tags:
+  - 
+---
 # mo.js
 ### 什么是mo.js？
 

@@ -1,3 +1,13 @@
+---
+title: 网页版PPT
+date: 2021-10-08 13:55:13
+permalink: /pages/d90a1b/
+categories:
+  - accumulate
+  - Webversion
+tags:
+  - 
+---
 # 网页版PPT
 
 ## reveal.js

@@ -2,7 +2,7 @@
   "name": "vuepressblod",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "layouts/Layout.vue",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
@@ -10,5 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.8.2",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.3.0"
+  }
 }
