@@ -23,7 +23,6 @@ module.exports = {
         // "/accumulate/PIxijs.html",
         // "/accumulate/textillatejs.html",
         // "/accumulate/es6.html",
-
         {
           "/mojs/": [
             "",
@@ -43,7 +42,7 @@ module.exports = {
       ],
     },
     sidebar: "auto", // 侧边栏配置
-    sidebarDepth: 2, // 侧边栏显示2级
+    sidebarDepth: 5, // 侧边栏显示2级
     plugins: ["vuepress/active-header-links"],
   },
 };

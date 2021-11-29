@@ -410,6 +410,187 @@ Array.from(asArr)
 图20:<br>
 ![](../../.vuepress/public/images/array24.png)
 
+#### 方法二：Array.prototype.slice.call()
+```js
+const a={0:'tgs',name:1,'er1':'fs0',length:9};
+Array.prototype.slice.call(a)
+//结果：['tgs', empty × 8]
+// empty 不可枚举
+```
+图21:<br>
+![](../../.vuepress/public/images/array25.png)
 ::: tip 提示
-这个方法直接练习没有生成对应的数据
+在类数组中，如想要转换数组。类数组中一定要有字段length,不然转换出来的数组是空数组
+
+PS:其他产生 empty 的情况
+```js
+// 也会产生 empty 空位，不会改变 length 属性
+delete arr[2]
+// 直接删掉元素，且改变 length 属性
+arr.splice(2, 1)
+```
 :::
+
+#### 方法三：扩展运算符
+这个方法目前不知道如何练习。
+```js
+[...document.querySelectorAll('div')]
+```
+### 16.数组转换对象（ 数组 --> 对象）
+
+####  方法一：扩展运算符
+数组使用扩展运算符转换成对象
+```js
+arr = ['aaa', 'bbbb', 'cccc', 'dddd']
+console.log({...arr})
+```
+::: tip 注意
+这个方法目前没有转换成功，转换出来的的undefind的类型。
+:::
+
+#### 方法二：while()
+
+```js
+ leti = 0 ,
+s = {},
+arr = ['aaa', 'bbbb', 'cccc', 'dddd'];
+while (arr[i]) {
+    s[i] = arr[i++]
+}
+
+s// {0: 'aaa', 1: 'bbbb', 2: 'cccc', 3: 'dddd'}
+```
+图22:<br>
+![](../../.vuepress/public/images/array26.png)
+
+#### 方法三：Object.fromEntries()
+关于这个函数转换的数组是一个错误的
+```js
+Object.keys({name:'张三',age:21}) //(2) ['name', 'age']
+Object.values({name:'张三',age:22}) //['张三', 22]
+Object.entries({name:'张三',age:23}) //[['name', '张三'],['age', 23]]
+```
+图23:<br>
+![](../../.vuepress/public/images/array27.png)
+
+### 17.浅拷贝
+#### 方法一：Array.slice()
+```js
+arr = ['aaa', 'bbbb', 'cccc', 'dddd']
+arr1 = arr.slice(0)
+arr[1] = 2333 // 2333
+arr // ['aaa', 2333, 'cccc', 'dddd']
+arr1 // ['aaa', 'bbbb', 'cccc', 'dddd']
+```
+图24:<br>
+![](../../.vuepress/public/images/array28.png)
+
+#### 方法二：展开操作符
+```js
+arr=['wrwr','rhae','ghsn','hrstjr'];
+arr5=[...arr];//['wrwr', 'rhae', 'ghsn', 'hrstjr']
+```
+图25:<br>
+![](../../.vuepress/public/images/array29.png)
+
+#### 方法三：Array.concat()
+```js
+abc=['rhe','hnjtd','ttt','xgn'];
+bck=[].concat(abc)
+bck[2]=345;
+abc //['rhe', 'hnjtd', 'ttt', 'xgn']
+bck //['rhe', 'hnjtd', 345, 'xgn']
+```
+图26:<br>
+![](../../.vuepress/public/images/array30.png)
+
+#### 方法四：直接赋值
+```js
+arr = ['aaa', 'bbbb', 'cccc', 'dddd']
+arr1 = arr
+arr[1] = 2333 // 2333
+arr // ['aaa', 2333, 'cccc', 'dddd']
+arr1 // ['aaa', 2333, 'cccc', 'dddd']
+```
+### 18.Array.from 达到 .map 的效果
+```js
+bb=[{name:'张三',age:21},{name:'李四',age:21},{name:'王五',age:21},{name:'张六',age:21}];
+namebb=bb.map(v=>v.name); //['张三', '李四', '王五', '张六']
+bb=[{name:'张三',age:21},{name:'李四',age:21},{name:'王五',age:21},{name:'张六',age:21}];
+namebb=Array.from(bb,({name})=>name) //['张三', '李四', '王五', '张六']
+```
+图27:<br>
+![](../../.vuepress/public/images/array31.png)
+
+### 19.获取最后 n 个元素
+在使用这个slice函数，splice函数时，函数中splice的参数的代表取到几位。取的位置从最后一个开始。
+```js
+ab=['aaa','bbb','ccc','ddd'];
+ab.slice().splice(-1)
+//['ddd']
+
+ab=['aaa','bbb','ccc','ddd'];
+ab.slice().splice(-2)
+//['ccc', 'ddd']
+```
+图26:<br>
+![](../../.vuepress/public/images/array32.png)
+
+## 循环的性能与小优化
+
+### 优化一：优化 for 循环
+* 当循环复杂度为 O(n) 时，减少每次迭代的工作量是最有效的方法。
+* 当复杂度大于 O(n) 时，建议着重减少迭代次数。
+#### a. 减少每次取length的次数
+这样避免了每次执行循环都要先去找array.length
+```js
+for (let i = 0; i < array.length; i++) {
+    console.log(i) // 0 1 2
+}
+```
+// 优化后
+```js
+for (let i = 0, len = array.length; i < len; i++) {
+    console.log(i) // 0 1 2
+    // do sth...
+}
+```
+#### b. 倒序循环
+```js
+for (let i = array.length; i > 0; i--) {
+    console.log(i) // 3 2 1
+}
+```
+// 优化后
+```js
+for (let i = array.length - 1; i >= 0; i--) {
+    console.log(i) // 2 1 0
+}
+```
+// 优化后
+```js
+for (let i = array.length; i--;) {
+    console.log(i) // 2 1 0
+    // do sth...
+}
+```
+#### 优化二：不要使用 for-in 来遍历数组
+在JavaScript提供的循环类型中，只有for-in循环比其他几种明显要慢。
+由于每次迭代操作会同时搜索实例或原型属性，for-in循环的每次迭代都会产生更多开销，所以比其他循环类型要慢。
+因此，除非你明确需要迭代一个属性数量未知的对象，否则应避免使用for-in循环。
+#### 优化三：慎用基于函数的迭代
+例如：forEach
+基于函数的迭代提供了一个更为便利的迭代方法，但它仍然比基于循环的迭代要慢一些。对每个数组调用外部方法所带来的开销是速度慢的主要原因。在所有情况下，基于循环的迭代比基于函数的迭代快8倍，因此在运行速度要求严格时，基于函数的迭代不是更好的选择。
+#### 优化四：尽量使用 switch-case 条件语句
+除非在非真既假的判断中，其余条件判断时多用 switch-case 语句，少用 if/else-if/else 语句。原因如下：
+* 支持关联操作，即不写 break 语句
+* 本质是汇编时生成的跳转表来指示 case 的地址，所以每一个 case 的执行时间基本是相同的，执行效率不会受先后顺序的影响
+* 代码更清晰，可读性和可维护性要高很多
+#### 优化五：查找表
+当有大量离散数据的时候，使用查找表比使用if-else和switch-case快得多。
+// 将返回值集合存入数组
+```js
+const results = [result0, result1, result2, result3, result4]
+// 返回结果
+return results[value]
+```

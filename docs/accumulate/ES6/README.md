@@ -10,3 +10,7 @@ tags:
 ---
 # ES6
 ## [ES6的基础知识点](/accumulate/ES6/es6.html)
+## [ES7的基础知识点](/accumulate/ES6/es7.html)
+## [ES8的基础知识点](/accumulate/ES6/es8.html)
+## [ES9的基础知识点](/accumulate/ES6/es9.html)
+## [ES10的基础知识点](/accumulate/ES6/es10.html)

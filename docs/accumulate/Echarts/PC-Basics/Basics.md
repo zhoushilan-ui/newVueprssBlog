@@ -13,3 +13,4 @@ tags:
 
 ## [echarts的官网](https://echarts.apache.org/zh/index.html)
 ## echarts的案列-[MAKEAPIE](https://www.makeapie.com/explore.html)
+## [echarts的问题](/accumulate/Echarts/PC-Basics/echarts-problem.html)
