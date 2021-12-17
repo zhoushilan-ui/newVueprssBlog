@@ -23,3 +23,5 @@ tags:
 ## [html5，css的案例](/accumulate/html5css/)
 ## [使用的组件、自定义组件](/accumulate/assembly/)
 ## [小游戏](/accumulate/game/)
+## [element UI](/accumulate/element-UI/)
+## [Mxgraph](/accumulate/mxgraph/)
