@@ -1,4 +1,5 @@
 # UI 组件的问题
+## [element UI在全屏下面组件不显示](/accumulate/element-UI/FullScreen.html)
 
 ## 如何在组件-日期时间选择器中限制用户的时间选择
 * 条件：当用户选择了开始时间，那么结束时间的时间范围：开始时间到当前时间.显示如图1所示。 
@@ -88,5 +89,31 @@ export default {
     };
   },
 };
+</script>
+```
+
+
+## 修改表格的左边边框的距离
+如果想要修改表格中行内的样式，除了使用css修改以外，可以使用element表格组件自带的事件`cell-style`,`header-cell-style`,一个是修改表格的行内，一个是修改表格表头的行内，直接把需要修改的样式返回就行。
+```js
+<template>
+<el-table :cell-style="cellStyle" :header-cell-style="headerCellStyle" >
+    ...
+</el-table>
+</template>
+<script>
+export default {
+  methods: {
+    //改表格单元格的样式
+    cellStyle() {
+      return "padding-left:30px";
+    },
+    //修改表格表头的样式
+    headerCellStyle() {
+      return "padding-left:30px";
+    },
+  },
+};
+   
 </script>
 ```
