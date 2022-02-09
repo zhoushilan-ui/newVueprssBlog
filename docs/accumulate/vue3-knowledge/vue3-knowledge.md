@@ -468,4 +468,492 @@ export default {
  * data
  * computed
  * methods
- * refs (模板 ref
+ * refs (模板 ref)
+
+
+ ## 生命周期钩子
+
+ 一般，在组合式API中的生命周期钩子和vue2的生命周期钩子一样的功能，只不过组合式API在前面添加`on`。  
+ 选项API和组合式API的的生命周期的名称区别：  
+|  选项式 API   | Hook inside `setup`  |
+|  ----  | ----  |
+| `beforeCreate`  | `Not needed*` |
+| `created`  | `Not needed*` |
+| `beforeMount`  | `onBeforeMount` |
+| `mounted`  | `onMounted` |
+| `beforeUpdate`  | `onBeforeUpdate` |
+| `updated`  | `onUpdated` |
+| `beforeUnmount`  | `onBeforeUnmount` |
+| `unmounted`  | `onUnmounted` |
+| `errorCaptured`  | `onErrorCaptured` |
+| `renderTracked`  | `onRenderTracked` |
+| `renderTriggered`  | `onRenderTriggered` |
+| `activated`  | `onActivated` |
+| `deactivated`  | `onDeactivated` |
+
+:::  warning 注意
+因为 `setup` 是围绕 `beforeCreate` 和 `created` 生命周期钩子运行的，所以不需要显式地定义它们。换句话说，在这些钩子中编写的任何代码都应该直接在 `setup` 函数中编写。
+:::  
+这些函数接受一个回调函数，当钩子被组件调用时将会被执行:  
+```js
+import { onMounted } from "vue";
+export default {
+  data() {
+    return {};
+  },
+  setup() {
+    // mounted
+    onMounted(() => {
+      console.log("Component is mounted!");
+    });
+  },
+  mounted() {},
+  methods: {},
+};
+```  
+输出`Component is mounted!`
+
+## Provide / Inject (看不懂)
+组合式 API 中使用 provide/inject。两者都只能在当前活动实例的 setup() 期间调用。
+
+## 模板引用
+
+模板引用：为了获得对模板内元素或组件实例的引用。  
+在使用组合式 API 时，响应式引用和模板引用的概念是统一的。可以像往常一样声明 ref 并从 setup() 返回：
+
+
+## 路由
+### 路由使用
+[vue3](https://router.vuejs.org/zh/installation.html#npm) 的路由大多使用和vue2有一些相似用法。
+
+在项目中下载vue-router
+```js
+ npm install vue-router@4
+```
+新建一个router文件，在新建一个index.js,引入依赖路由
+```js
+import { createRouter, createWebHashHistory } from "vue-router";
+const test1 = () => import("../views/demo/test1");
+const test2 = () => import("../views/demo/test2");
+const test6 = () => import("../views/demo/test6");
+const index = () => import("../views/index");
+const routes = [
+  { path: "/", name: "index", component: index },
+  {
+    path: "/test1",
+    name: "test1",
+    component: test1,
+  },
+  {
+    path: "/test2",
+    name: "test2",
+    component: test2,
+  },
+  {
+    path: "/test6",
+    name: "test6",
+    component: test6,
+  },
+];
+
+export const router = createRouter({
+  history: createWebHashHistory(),
+  routes: routes,
+});
+```
+
+在main.js
+```js
+import { createApp } from "vue";
+import App from "./App.vue";
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
+import zhCn from "element-plus/es/locale/lang/zh-cn";
+//引入路由
+import { router } from "./router";
+// import "./permission";
+// import store from './store'
+// 引入mock.js
+require("./mock");
+
+const app = createApp(App);
+
+app
+  .use(ElementPlus, { size: "small", zIndex: 3000, locale: zhCn })
+  .use(router)
+  .mount("#app");
+```
+在App.vue
+
+```js
+<template>
+  <!-- 路由出口 -->
+  <!-- 路由匹配到的组件将渲染在这里 -->
+  <router-view></router-view>
+</template>
+
+<script>
+export default {
+  name: "App",
+  components: {},
+  data() {
+    return {};
+  },
+  mounted() {},
+};
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  /* margin-top: 60px; */
+}
+</style>
+```
+效果：  
+根目录：
+![](../../.vuepress/public/images/vue3/vue3-img9.png)
+test1路由:
+![](../../.vuepress/public/images/vue3/vue3-img10.png)
+test6路由:
+![](../../.vuepress/public/images/vue3/vue3-img11.png)
+
+### 嵌套式路由
+是一个路由下面可以嵌套另一个路由地址，想要显示路由，直接输入子路由的地址就行。
+一些应用程序的 UI 由多层嵌套的组件组成。在这种情况下，URL 的片段通常对应于特定的嵌套组件结构，例如：
+```js
+/user/johnny/profile                     /user/johnny/posts
++------------------+                  +-----------------+
+| User             |                  | User            |
+| +--------------+ |                  | +-------------+ |
+| | Profile      | |  +------------>  | | Posts       | |
+| |              | |                  | |             | |
+| +--------------+ |                  | +-------------+ |
++------------------+                  +-----------------+
+```
+如果要使[嵌套路由](https://router.vuejs.org/zh/guide/essentials/nested-routes.html)，是使用`children`字段，这字段用数组的形式显示，如下所示：  
+```js
+ {
+    path: "",
+    name: "index",
+    component: Layout,
+    children: [
+      {
+        path: "/test6",
+        component: test6,
+      },
+    ],
+  },
+```
+`Layout`代表页面的整体的布局，而子路由的的布局是模板引用的样式。在拥有嵌套路由的情况下，所有的`children`的的内容渲染在空白部分(右边的的主页面部分)。  
+嵌套路由:
+![](../../.vuepress/public/images/vue3/vue3-img12.png)
+
+### 命令视图
+如果想要展示多个视图，例如一个页面有侧边栏(silder)，主页面(main)，那么在一个页面就可以使用命令视图。一个界面就可以拥有多个单独命令的视图，如果`router-view`没有设置名称，默认为`default`。
+```js
+<router-view class="view left-sidebar" name="LeftSidebar"></router-view>
+<router-view class="view main-content"></router-view>
+<router-view class="view right-sidebar" name="RightSidebar"></router-view>
+```
+一个视图使用一个组件渲染，因此对于同个路由，多个视图就需要多个组件。确保正确使用`components`配置 (带上 s)：
+```js
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: [
+    {
+      path: '/',
+      components: {
+        default: Home,
+        // LeftSidebar: LeftSidebar 的缩写
+        LeftSidebar,
+        // 它们与 `<router-view>` 上的 `name` 属性匹配
+        RightSidebar,
+      },
+    },
+  ],
+})
+```
+案例1：  
+```js
+{
+    path: "/index",
+    name: "index",
+    component: Layout,
+    children: [
+      {
+        path: "test1",
+        component: test1,
+      },
+      {
+        path: "test6",
+        components: {
+          default: test6,
+          LeftSidebar,
+        },
+      },
+    ],
+},
+```
+效果：  
+![](../../.vuepress/public/images/vue3/vue3-img13.png)
+案例2：  
+layout.vue:
+```js
+<template>
+  <el-container class="layout-container-demo" style="border: 1px solid #eee">
+    <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+      <router-view class="view left-sidebar" name="LeftSidebar"></router-view>
+    </el-aside>
+    <el-container>
+      <el-header style="text-align: right; font-size: 12px">
+        <router-view class="view top-navbar" name="TopNavbar"></router-view>
+      </el-header>
+      <el-main>
+        <router-view class="view main-content"></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
+</template>
+
+<script>
+export default {
+  data() {
+    return {};
+  },
+
+  setup() {},
+  created() {},
+  methods: {},
+  mounted() {},
+};
+</script>
+
+<style scoped>
+.layout-container-demo {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.layout-container-demo .el-header {
+  position: relative;
+  background-color: #b3c0d1;
+  color: var(--el-text-color-primary);
+}
+.layout-container-demo .el-aside {
+  width: 240px;
+  color: var(--el-text-color-primary);
+  background: #fff !important;
+  border-right: solid 1px #e6e6e6;
+  box-sizing: border-box;
+}
+.layout-container-demo .el-menu {
+  border-right: none;
+}
+.layout-container-demo .el-main {
+  padding: 20px;
+}
+</style>
+```
+路由文件 index.js：  
+```js
+import { createRouter, createWebHashHistory } from "vue-router";
+const test1 = () => import("@/views/demo/test1");
+const test6 = () => import("@/views/demo/test6");
+const index = () => import("@/views/index");
+
+import Layout from "@/layout";
+import LeftSidebar from "@/layout/components/silder";
+import TopNavbar from "@/layout/components/navbar";
+const routes = [
+  {
+    path: "/",
+    name: "index",
+    component: Layout,
+    redirect: "index",
+    children: [
+      {
+        path: "index",
+        name: "index",
+        components: {
+          default: index,
+          LeftSidebar,
+          TopNavbar,
+        },
+      },
+      {
+        path: "test1",
+        components: {
+          default: test1,
+          LeftSidebar,
+          TopNavbar,
+        },
+      },
+      {
+        path: "test6",
+        components: {
+          default: test6,
+          LeftSidebar,
+          TopNavbar,
+        },
+      },
+    ],
+  },
+];
+export const router = createRouter({
+  history: createWebHashHistory(),
+  routes: routes,
+});
+```
+侧边栏的路由：
+silder.vue:  
+```js
+<template>
+  <el-scrollbar>
+    <el-menu
+      :router="true"
+      :default-active="activeIndex"
+      active-text-color="#ffd04b"
+      background-color="#545c64"
+      class="el-menu-vertical-demo"
+      text-color="#fff"
+    >
+      <div class="class-logo">
+        <el-icon><icon-menu /> vue3 + 练习 </el-icon>
+        <el-avatar :src="avatar"></el-avatar>
+      </div>
+      <el-menu-item index="index">
+        <el-icon><icon-menu /></el-icon>
+        <span>首页</span>
+      </el-menu-item>
+      <el-sub-menu index="2">
+        <template #title>
+          <el-icon><message /></el-icon>菜单
+        </template>
+        <el-menu-item-group>
+          <el-menu-item index="test1">Option 1</el-menu-item>
+          <el-menu-item index="test6">Option 2</el-menu-item>
+        </el-menu-item-group>
+      </el-sub-menu>
+    </el-menu>
+  </el-scrollbar>
+</template>
+
+<script>
+import avatar from "../../../assets/dog.jpg";
+import { ref } from "vue";
+export default {
+  data() {
+    return { avatar };
+  },
+  setup() {
+    const activeIndex = ref("index");
+
+    return {
+      activeIndex,
+      avatar,
+    };
+  },
+};
+</script>
+
+<style scoped>
+.el-scrollbar {
+  background: #545c64 !important;
+}
+.demo-type {
+  display: flex;
+}
+.demo-type > div {
+  flex: 1;
+  text-align: center;
+}
+::v-deep .el-avatar > img {
+  width: 50px;
+  height: 50px;
+}
+
+.class-logo {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.el-menu-vertical-demo {
+  --el-menu-border-color: #545c64 !important;
+}
+
+.class-logo .el-icon {
+  width: 140px;
+  display: inline-block;
+}
+
+.demo-type > div:not(:last-child) {
+  border-right: 1px solid var(--el-border-color-base);
+}
+</style>
+```
+效果：  
+![](../../.vuepress/public/images/vue3/vue3-style2.gif)
+
+## 导航路由
+vue3的[导航路由](https://router.vuejs.org/zh/guide/advanced/navigation-guards.html)和vue2的导航路由的概念是大不多的。vue-router 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。这里有很多方式植入路由导航中：全局的，单个路由独享的，或者组件级的。
+### 全局前置守卫
+可以使用`router.beforeEach`z注册一个全局前置守卫：
+```js
+const router = createRouter({ ... })
+router.beforeEach((to, from) => {
+  // ...
+  // 返回 false 以取消导航
+  return false
+})
+```
+当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于等待中。
+每个守卫方法接收两个参数：  
+* to: 即将要进入的目标 用一种标准化的方式
+* from: 当前导航正要离开的路由 用一种标准化的方式
+可以返回的值如下:  
+* false: 取消当前的导航。如果浏览器的 URL 改变了(可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址。
+* 一个路由地址: 通过一个路由地址跳转到一个不同的地址，就像你调用 router.push() 一样，你可以设置诸如 replace: true 或 name: 'home' 之类的配置。当前的导航被中断，然后进行一个新的导航，就和 from 一样。
+案例：  
+```js
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+import { router } from "./router";
+NProgress.configure({
+  showSpinner: false,
+});
+// const whiteList = ["/login"];
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  if (from.path === "/login" && (to.path === "/" || to.path === "/index")) {
+    sessionStorage.setItem("backPage", "1");
+  }
+  //   if (whiteList.indexOf(to.path) !== -1) {
+  // 在免登录白名单，直接进入
+  next();
+  //   } else {
+  //     next(`${to.fullPath}`); // 否则全部重定向到登录页
+  //     NProgress.done();
+  //   }
+});
+
+router.afterEach(() => {
+  //   if (!failure) sendToAnalytics(to.fullPath);
+  NProgress.done();
+});
+```
+效果:(注意:页面中的进度条)
+![](../../.vuepress/public/images/vue3/vue3-style3.gif)
+### 全局后置钩子
+你也可以注册全局后置钩子，然而和守卫不同的是，这些钩子不会接受 next 函数也不会改变导航本身(如上)
